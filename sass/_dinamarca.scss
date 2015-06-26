@@ -1,0 +1,72 @@
+$mobile: new-breakpoint(max-width 480px);
+$desktop: new-breakpoint(min-width 850px);
+
+/** Colores **/
+$white : #ffffff;
+$smoke : #2f3038;
+$snow : #eee;
+$green : #91c842;
+
+#call-to-action {
+	  @include padding(15px 10px);
+		padding:rem(12) rem(10);
+	  background-color:$green;
+
+}
+
+header.site-header {
+	background-color:$smoke;
+
+	a {
+		color:$white;
+	}
+}
+
+#content {
+}
+#primary {
+
+
+	@include padding(10px);
+	background-color:$white;
+
+	@include media($mobile) {
+   		 @include span-columns(12);
+	}
+	@include media($desktop) {
+	    @include span-columns(8);
+			.site-main {
+					@include span-columns(6 of 8);
+					@include shift(2);
+			}
+	}
+
+
+}
+
+#primary.no-sidebar {
+		@include span-columns(12);
+}
+
+#secondary {
+	  @include clearfix;
+	  background-color: $snow;
+
+		@include media($mobile) {
+    	@include span-columns(12);
+  	}
+    @include media($desktop) {
+    	@include span-columns(4);
+    }
+
+		.content-sidebar {
+			@include span-columns(8);
+		}
+
+
+}
+
+
+.site-branding {
+	@include outer-container;
+}
