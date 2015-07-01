@@ -80,7 +80,7 @@ function yourprefix_register_demo_metabox() {
 	$cmb_demo = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
 		'title'         => __( 'Test Metabox', 'cmb2' ),
-		'object_types'  => array( 'page', ), // Post type
+		'object_types'  => array( 'post', ), // Post type
 		// 'show_on_cb' => 'yourprefix_show_if_front_page', // function should return a bool value
 		// 'context'    => 'normal',
 		// 'priority'   => 'high',
@@ -369,7 +369,7 @@ function yourprefix_register_about_page_metabox() {
 	$cmb_about_page = new_cmb2_box( array(
 		'id'           => $prefix . 'metabox',
 		'title'        => __( 'About Page Metabox', 'cmb2' ),
-		'object_types' => array( 'page', ), // Post type
+		'object_types' => array( 'post', ), // Post type
 		'context'      => 'normal',
 		'priority'     => 'high',
 		'show_names'   => true, // Show field names on the left
@@ -400,7 +400,7 @@ function yourprefix_register_repeatable_group_field_metabox() {
 	$cmb_group = new_cmb2_box( array(
 		'id'           => $prefix . 'metabox',
 		'title'        => __( 'Repeating Field Group', 'cmb2' ),
-		'object_types' => array( 'page', ),
+		'object_types' => array( 'post', ),
 	) );
 
 	// $group_field_id is the field id string, so in this case: $prefix . 'demo'
@@ -450,113 +450,25 @@ function yourprefix_register_repeatable_group_field_metabox() {
 
 }
 
-add_action( 'cmb2_init', 'yourprefix_register_user_profile_metabox' );
 /**
- * Hook in and add a metabox to add fields to the user profile pages
+ * Fields for Gallery (page-gallery.php);
  */
-function yourprefix_register_user_profile_metabox() {
+function dinamarca_gallery() {
+	$prefix = '_gallery_dinamarca';
 
-	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_yourprefix_user_';
-
-	/**
-	 * Metabox for the user profile screen
-	 */
-	$cmb_user = new_cmb2_box( array(
-		'id'               => $prefix . 'edit',
-		'title'            => __( 'User Profile Metabox', 'cmb2' ),
-		'object_types'     => array( 'user' ), // Tells CMB2 to use user_meta vs post_meta
-		'show_names'       => true,
-		'new_user_section' => 'add-new-user', // where form will show on new user page. 'add-existing-user' is only other valid option.
+	$gallery = new_cmb2_box( array(
+		'id'           => $prefix . 'metabox',
+		'title'        => __( 'Gallery Images', 'dinamarca' ),
+		'object_types' => array( 'page' ),
+		'show_on'      => array( 'key' => 'page-template', 'value' => 'templates/page-gallery.php' )
 	) );
 
-	$cmb_user->add_field( array(
-		'name'     => __( 'Extra Info', 'cmb2' ),
-		'desc'     => __( 'field description (optional)', 'cmb2' ),
-		'id'       => $prefix . 'extra_info',
-		'type'     => 'title',
-		'on_front' => false,
+	$gallery->add_field( array(
+		'name'         => __( 'Multiple Files', 'cmb2' ),
+		'desc'         => __( 'Upload or add multiple images/attachments.', 'cmb2' ),
+		'id'           => $prefix . 'file_list',
+		'type'         => 'file_list',
+		'preview_size' => array( 100, 100 ), // Default: array( 50, 50 )
 	) );
-
-	$cmb_user->add_field( array(
-		'name'    => __( 'Avatar', 'cmb2' ),
-		'desc'    => __( 'field description (optional)', 'cmb2' ),
-		'id'      => $prefix . 'avatar',
-		'type'    => 'file',
-	) );
-
-	$cmb_user->add_field( array(
-		'name' => __( 'Facebook URL', 'cmb2' ),
-		'desc' => __( 'field description (optional)', 'cmb2' ),
-		'id'   => $prefix . 'facebookurl',
-		'type' => 'text_url',
-	) );
-
-	$cmb_user->add_field( array(
-		'name' => __( 'Twitter URL', 'cmb2' ),
-		'desc' => __( 'field description (optional)', 'cmb2' ),
-		'id'   => $prefix . 'twitterurl',
-		'type' => 'text_url',
-	) );
-
-	$cmb_user->add_field( array(
-		'name' => __( 'Google+ URL', 'cmb2' ),
-		'desc' => __( 'field description (optional)', 'cmb2' ),
-		'id'   => $prefix . 'googleplusurl',
-		'type' => 'text_url',
-	) );
-
-	$cmb_user->add_field( array(
-		'name' => __( 'Linkedin URL', 'cmb2' ),
-		'desc' => __( 'field description (optional)', 'cmb2' ),
-		'id'   => $prefix . 'linkedinurl',
-		'type' => 'text_url',
-	) );
-
-	$cmb_user->add_field( array(
-		'name' => __( 'User Field', 'cmb2' ),
-		'desc' => __( 'field description (optional)', 'cmb2' ),
-		'id'   => $prefix . 'user_text_field',
-		'type' => 'text',
-	) );
-
 }
-
-add_action( 'cmb2_init', 'yourprefix_register_theme_options_metabox' );
-/**
- * Hook in and register a metabox to handle a theme options page
- */
-function yourprefix_register_theme_options_metabox() {
-
-	// Start with an underscore to hide fields from custom fields list
-	$option_key = '_yourprefix_theme_options';
-
-	/**
-	 * Metabox for an options page. Will not be added automatically, but needs to be called with
-	 * the `cmb2_metabox_form` helper function. See wiki for more info.
-	 */
-	$cmb_options = new_cmb2_box( array(
-		'id'      => $option_key . 'page',
-		'title'   => __( 'Theme Options Metabox', 'cmb2' ),
-		'hookup'  => false, // Do not need the normal user/post hookup
-		'show_on' => array(
-			// These are important, don't remove
-			'key'   => 'options-page',
-			'value' => array( $option_key )
-		),
-	) );
-
-	/**
-	 * Options fields ids only need
-	 * to be unique within this option group.
-	 * Prefix is not needed.
-	 */
-	$cmb_options->add_field( array(
-		'name'    => __( 'Site Background Color', 'cmb2' ),
-		'desc'    => __( 'field description (optional)', 'cmb2' ),
-		'id'      => 'bg_color',
-		'type'    => 'colorpicker',
-		'default' => '#ffffff',
-	) );
-
-}
+add_action( 'cmb2_init', 'dinamarca_gallery' );

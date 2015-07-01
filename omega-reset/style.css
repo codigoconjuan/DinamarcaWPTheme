@@ -1,0 +1,71 @@
+/* line 4, ../sass/neat/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 9, ../sass/neat/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+/* line 27, ../sass/omega-reset/mixins/_media-query-helper.scss */
+body:before {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9999;
+  padding: 0.5em 0.75em;
+  font-family: monospace;
+  font-size: 1.125em;
+  line-height: 1;
+  color: #20D832;
+  background: rgba(0, 0, 0, 0.8);
+}
+@media screen and (min-width: 30em) {
+  /* line 27, ../sass/omega-reset/mixins/_media-query-helper.scss */
+  body:before {
+    content: "@include media(30em)";
+  }
+}
+@media screen and (min-width: 35em) {
+  /* line 27, ../sass/omega-reset/mixins/_media-query-helper.scss */
+  body:before {
+    content: "@include media(35em)";
+  }
+}
+@media screen and (min-width: 40em) {
+  /* line 27, ../sass/omega-reset/mixins/_media-query-helper.scss */
+  body:before {
+    content: "@include media(40em)";
+  }
+}
+@media screen and (min-width: 45em) {
+  /* line 27, ../sass/omega-reset/mixins/_media-query-helper.scss */
+  body:before {
+    content: "@include media(45em)";
+  }
+}
+@media screen and (min-width: 50em) {
+  /* line 27, ../sass/omega-reset/mixins/_media-query-helper.scss */
+  body:before {
+    content: "@include media(50em)";
+  }
+}
+@media screen and (min-width: 55em) {
+  /* line 27, ../sass/omega-reset/mixins/_media-query-helper.scss */
+  body:before {
+    content: "@include media(55em)";
+  }
+}
+@media screen and (min-width: 60em) {
+  /* line 27, ../sass/omega-reset/mixins/_media-query-helper.scss */
+  body:before {
+    content: "@include media(60em)";
+  }
+}
+@media screen and (min-width: 65em) {
+  /* line 27, ../sass/omega-reset/mixins/_media-query-helper.scss */
+  body:before {
+    content: "@include media(65em)";
+  }
+}

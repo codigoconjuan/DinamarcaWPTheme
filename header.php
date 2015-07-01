@@ -21,19 +21,61 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<div id="call-to-action">
-			Tel: 30014881
+				<div class="wrapper">
+						 <?php $titan = TitanFramework::getInstance( 'dinamarca' ); ?>
+						 <?php if ($titan->getOption( 'phone_number' )) { ?>
+									<div class="information phone">
+									   <?php $phoneNumber = $titan->getOption( 'phone_number' ); ?>
+										    	<a href="tel:+<?php echo $phoneNumber; ?>" class="button">
+																<i class="fa fa-phone"></i>
+																<?php echo $phoneNumber; ?>
+													</a>
+									</div>
+							<?php } // end if?>
+
+						  <?php $titan = TitanFramework::getInstance( 'dinamarca' ); ?>
+							<?php if ($titan->getOption( 'phone_number' )) { ?>
+							<div class="information">
+							   <?php $btnText = $titan->getOption( 'button_text' ); ?>
+								 <?php $btnLink = $titan->getOption( 'button_link' ); ?>
+								    <a href="<?php echo $btnLink; ?>" class="button">
+													<i class="fa fa-check"></i>
+													<?php echo $btnText; ?>
+									  </a>
+							</div>
+							<?php } ?>
+				</div><!--.wrapper-->
 	</div>
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'dinamarca' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+  <?php $titan = TitanFramework::getInstance( 'dinamarca' ); ?>
+	<?php $headerImage = $titan->getOption( 'header_image' ); ?>
+	<header id="masthead" class="site-header <?php echo (!empty($headerImage) ? 'header-image' : ''); ?>" role="banner"  >
 		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+
+		    	<?php $titan = TitanFramework::getInstance( 'dinamarca' ); ?>
+					<?php if ($logoID = $titan->getOption( 'logo_imagen' )) {
+				        $logoID = $titan->getOption( 'logo_imagen' );
+								$imageAttachment = wp_get_attachment_image_src( $logoID,'full' );
+			          $imageSrc = $imageAttachment[0]; ?>
+
+								<div class="logo">
+											<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+														<img src="<?php echo $imageSrc; ?>">
+											</a>
+								</div>
+
+
+					<?php } else { ?>
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			  	<?php	} ?>
+
+          <p class="site-description"><?php bloginfo( 'description' ); ?></p>
+
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'dinamarca' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
