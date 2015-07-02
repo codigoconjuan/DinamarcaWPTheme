@@ -4522,6 +4522,9 @@ figure {
 /* line 85, sass/_dinamarca.scss */
 .main-navigation {
   display: none;
+  height: 44px;
+  overflow: hidden;
+  transition: all 1s ease;
 }
 @media screen and (min-width: 992px) {
   /* line 85, sass/_dinamarca.scss */
@@ -4529,7 +4532,38 @@ figure {
     display: block;
     background-color: #242A30;
   }
-  /* line 92, sass/_dinamarca.scss */
+  /* line 96, sass/_dinamarca.scss */
+  .main-navigation.active {
+    height: 92px;
+  }
+  /* line 103, sass/_dinamarca.scss */
+  .main-navigation .container {
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+  /* line 20, sass/bourbon/addons/_clearfix.scss */
+  .main-navigation .container::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  /* line 109, sass/_dinamarca.scss */
+  .main-navigation .container i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #ffffff;
+    font-size: 1.5em;
+    padding: 10px;
+  }
+  /* line 118, sass/_dinamarca.scss */
+  .main-navigation .container i:hover {
+    cursor: pointer;
+  }
+  /* line 123, sass/_dinamarca.scss */
+  .main-navigation ul.menu,
   .main-navigation div.menu {
     max-width: 68em;
     margin-left: auto;
@@ -4537,38 +4571,46 @@ figure {
     padding: 0 0 0 25px;
   }
   /* line 20, sass/bourbon/addons/_clearfix.scss */
+  .main-navigation ul.menu::after,
   .main-navigation div.menu::after {
     clear: both;
     content: "";
     display: table;
   }
-  /* line 95, sass/_dinamarca.scss */
+  /* line 127, sass/_dinamarca.scss */
+  .main-navigation ul.menu li,
   .main-navigation div.menu li {
     padding: 10px;
   }
-  /* line 97, sass/_dinamarca.scss */
+  /* line 129, sass/_dinamarca.scss */
+  .main-navigation ul.menu li.current_page_item,
   .main-navigation div.menu li.current_page_item {
     background-color: #363f48;
   }
-  /* line 100, sass/_dinamarca.scss */
+  /* line 132, sass/_dinamarca.scss */
+  .main-navigation ul.menu li:hover,
   .main-navigation div.menu li:hover {
     background-color: #363f48 !important;
   }
-  /* line 103, sass/_dinamarca.scss */
+  /* line 135, sass/_dinamarca.scss */
+  .main-navigation ul.menu li > ul,
   .main-navigation div.menu li > ul {
     background-color: #242A30 !important;
   }
-  /* line 112, sass/_dinamarca.scss */
+  /* line 144, sass/_dinamarca.scss */
+  .main-navigation ul.menu ul.children li,
   .main-navigation div.menu ul.children li {
     margin-bottom: 10px;
     margin-bottom: 0.625rem;
   }
-  /* line 116, sass/_dinamarca.scss */
+  /* line 148, sass/_dinamarca.scss */
+  .main-navigation ul.menu ul.children li a,
   .main-navigation div.menu ul.children li a {
     font-size: 12px;
     font-size: 0.75rem;
   }
-  /* line 122, sass/_dinamarca.scss */
+  /* line 154, sass/_dinamarca.scss */
+  .main-navigation ul.menu a,
   .main-navigation div.menu a {
     color: #ffffff;
     text-transform: uppercase;
@@ -4576,30 +4618,30 @@ figure {
   }
 }
 
-/* line 131, sass/_dinamarca.scss */
+/* line 163, sass/_dinamarca.scss */
 .main-navigation ul ul {
   top: 2.7em;
 }
 
-/* line 135, sass/_dinamarca.scss */
+/* line 167, sass/_dinamarca.scss */
 .site-branding {
   padding: 60px;
   width: 100%;
   text-align: center;
   color: #ffffff;
 }
-/* line 143, sass/_dinamarca.scss */
+/* line 175, sass/_dinamarca.scss */
 .site-branding a {
   color: #ffffff;
 }
-/* line 146, sass/_dinamarca.scss */
+/* line 178, sass/_dinamarca.scss */
 .site-branding h1.site-title {
   font-family: "Pinyon Script", cursive;
   font-size: 40px;
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
-/* line 152, sass/_dinamarca.scss */
+/* line 184, sass/_dinamarca.scss */
 .site-branding p.site-description {
   width: 100%;
   font-size: 20px;
@@ -4608,19 +4650,40 @@ figure {
 }
 
 /** header **/
-/* line 164, sass/_dinamarca.scss */
+/* line 196, sass/_dinamarca.scss */
 header.site-header.header-image {
-  background-attachment: fixed;
+  background-attachment: scroll;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
+  height: 80vh;
+  padding: 0;
 }
-/* line 168, sass/_dinamarca.scss */
+@media screen and (min-width: 992px) {
+  /* line 196, sass/_dinamarca.scss */
+  header.site-header.header-image {
+    background-attachment: fixed;
+    background-size: cover;
+    height: auto;
+  }
+}
+/* line 208, sass/_dinamarca.scss */
 header.site-header.header-image .site-branding {
-  padding: 80px 0;
+  height: 80vh;
   margin: 0;
+  padding: 0;
+  padding-top: 200px;
   background-image: url(img/bg-pattern.png);
 }
+@media screen and (min-width: 992px) {
+  /* line 208, sass/_dinamarca.scss */
+  header.site-header.header-image .site-branding {
+    padding: 80px 0;
+    height: auto;
+  }
+}
 
-/* line 176, sass/_dinamarca.scss */
+/* line 223, sass/_dinamarca.scss */
 header .logo {
   max-width: 68em;
   margin-left: auto;
@@ -4632,7 +4695,7 @@ header .logo::after {
   content: "";
   display: table;
 }
-/* line 178, sass/_dinamarca.scss */
+/* line 225, sass/_dinamarca.scss */
 header .logo img {
   float: left;
   display: block;
@@ -4645,7 +4708,7 @@ header .logo img:last-child {
   margin-right: 0;
 }
 @media screen and (min-width: 992px) {
-  /* line 178, sass/_dinamarca.scss */
+  /* line 225, sass/_dinamarca.scss */
   header .logo img {
     float: left;
     display: block;
@@ -4660,20 +4723,20 @@ header .logo img:last-child {
 }
 
 /** MAIN CONTENT**/
-/* line 189, sass/_dinamarca.scss */
+/* line 236, sass/_dinamarca.scss */
 .site-content {
   background-image: url(img/project_papper.png);
   width: 100%;
 }
 @media screen and (min-width: 992px) {
-  /* line 189, sass/_dinamarca.scss */
+  /* line 236, sass/_dinamarca.scss */
   .site-content {
     padding: 0 0 20px 0;
   }
 }
 
 @media screen and (max-width: 767px) {
-  /* line 197, sass/_dinamarca.scss */
+  /* line 244, sass/_dinamarca.scss */
   #primary {
     float: left;
     display: block;
@@ -4686,7 +4749,7 @@ header .logo img:last-child {
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 197, sass/_dinamarca.scss */
+  /* line 244, sass/_dinamarca.scss */
   #primary {
     float: left;
     display: block;
@@ -4699,7 +4762,7 @@ header .logo img:last-child {
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 197, sass/_dinamarca.scss */
+  /* line 244, sass/_dinamarca.scss */
   #primary {
     float: left;
     display: block;
@@ -4710,7 +4773,7 @@ header .logo img:last-child {
   #primary:last-child {
     margin-right: 0;
   }
-  /* line 207, sass/_dinamarca.scss */
+  /* line 254, sass/_dinamarca.scss */
   #primary .site-main {
     float: left;
     display: block;
@@ -4724,7 +4787,7 @@ header .logo img:last-child {
   }
 }
 
-/* line 213, sass/_dinamarca.scss */
+/* line 260, sass/_dinamarca.scss */
 .hentry {
   padding: 20px;
   margin-bottom: 30px;
@@ -4732,7 +4795,7 @@ header .logo img:last-child {
 }
 
 /** NO SIDEBAR TEMPLATE **/
-/* line 220, sass/_dinamarca.scss */
+/* line 267, sass/_dinamarca.scss */
 #primary.no-sidebar {
   max-width: 68em;
   margin-left: auto;
@@ -4747,7 +4810,7 @@ header .logo img:last-child {
   display: table;
 }
 @media screen and (min-width: 992px) {
-  /* line 220, sass/_dinamarca.scss */
+  /* line 267, sass/_dinamarca.scss */
   #primary.no-sidebar {
     max-width: 68em;
     margin-left: auto;
@@ -4760,7 +4823,7 @@ header .logo img:last-child {
     display: table;
   }
 }
-/* line 227, sass/_dinamarca.scss */
+/* line 274, sass/_dinamarca.scss */
 #primary.no-sidebar .site-main {
   max-width: 68em;
   margin-left: auto;
@@ -4775,7 +4838,7 @@ header .logo img:last-child {
 }
 
 /** SIDEBAR **/
-/* line 236, sass/_dinamarca.scss */
+/* line 283, sass/_dinamarca.scss */
 #secondary {
   background-color: #ffffff;
   float: left;
@@ -4788,7 +4851,7 @@ header .logo img:last-child {
   margin-right: 0;
 }
 @media screen and (min-width: 768px) {
-  /* line 236, sass/_dinamarca.scss */
+  /* line 283, sass/_dinamarca.scss */
   #secondary {
     float: left;
     display: block;
@@ -4801,7 +4864,7 @@ header .logo img:last-child {
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 236, sass/_dinamarca.scss */
+  /* line 283, sass/_dinamarca.scss */
   #secondary {
     float: left;
     display: block;
@@ -4813,13 +4876,13 @@ header .logo img:last-child {
     margin-right: 0;
   }
 }
-/* line 247, sass/_dinamarca.scss */
+/* line 294, sass/_dinamarca.scss */
 #secondary .content-sidebar {
   width: 100%;
   padding: 30px 0 0 20px;
 }
 @media screen and (min-width: 768px) {
-  /* line 247, sass/_dinamarca.scss */
+  /* line 294, sass/_dinamarca.scss */
   #secondary .content-sidebar {
     float: left;
     display: block;
@@ -4831,12 +4894,12 @@ header .logo img:last-child {
     margin-right: 0;
   }
 }
-/* line 255, sass/_dinamarca.scss */
+/* line 302, sass/_dinamarca.scss */
 #secondary .widget {
   margin-bottom: 30px;
   margin-bottom: 1.875rem;
 }
-/* line 258, sass/_dinamarca.scss */
+/* line 305, sass/_dinamarca.scss */
 #secondary .widget h1.widget-title {
   padding: 10px 5px 10px 20px;
   margin-left: -20px;
@@ -4844,7 +4907,7 @@ header .logo img:last-child {
 }
 
 /** Sidebar Font Awesome **/
-/* line 268, sass/_dinamarca.scss */
+/* line 315, sass/_dinamarca.scss */
 .widget_recent_entries li:before,
 .widget_recent_comments li:before,
 .widget_archive li:before,
@@ -4858,40 +4921,40 @@ header .logo img:last-child {
   font-size: 1rem;
 }
 
-/* line 281, sass/_dinamarca.scss */
+/* line 328, sass/_dinamarca.scss */
 .widget_recent_entries li:before {
   content: "\f036";
 }
 
-/* line 285, sass/_dinamarca.scss */
+/* line 332, sass/_dinamarca.scss */
 .widget_recent_comments li:before {
   content: "\f086";
 }
 
-/* line 288, sass/_dinamarca.scss */
+/* line 335, sass/_dinamarca.scss */
 .widget_archive li:before {
   content: "\f187";
 }
 
-/* line 291, sass/_dinamarca.scss */
+/* line 338, sass/_dinamarca.scss */
 .widget_categories li:before {
   content: "\f07b";
 }
 
 /*** Header for Category/Archives/Post **/
-/* line 297, sass/_dinamarca.scss */
+/* line 344, sass/_dinamarca.scss */
 .page-header {
   padding: 20px;
   padding: 1.25rem;
 }
-/* line 301, sass/_dinamarca.scss */
+/* line 348, sass/_dinamarca.scss */
 .page-header h1.page-title {
   font-size: 26px;
   font-size: 1.625rem;
 }
 
 /*** links **/
-/* line 311, sass/_dinamarca.scss */
+/* line 358, sass/_dinamarca.scss */
 .hentry a,
 h1.entry-title a,
 h1.widget-title a,
@@ -4901,38 +4964,38 @@ nav.posts-navigation a {
   font-weight: bold;
 }
 
-/* line 319, sass/_dinamarca.scss */
+/* line 366, sass/_dinamarca.scss */
 h1.entry-title {
   font-size: 28px;
   font-size: 1.75rem;
 }
 
-/* line 323, sass/_dinamarca.scss */
+/* line 370, sass/_dinamarca.scss */
 h1.widget-title {
   font-size: 18px;
   font-size: 1.125rem;
   font-weight: normal;
 }
 
-/* line 328, sass/_dinamarca.scss */
+/* line 375, sass/_dinamarca.scss */
 .content-sidebar ul li {
   margin-bottom: 10px;
   margin-bottom: 0.625rem;
 }
 
-/* line 333, sass/_dinamarca.scss */
+/* line 380, sass/_dinamarca.scss */
 .content-sidebar a {
   font-size: 14px;
   font-size: 0.875rem;
 }
 
 /** Footer **/
-/* line 340, sass/_dinamarca.scss */
+/* line 387, sass/_dinamarca.scss */
 footer.site-footer {
   background-color: #363f48;
   padding: 20px 0;
 }
-/* line 343, sass/_dinamarca.scss */
+/* line 390, sass/_dinamarca.scss */
 footer.site-footer .site-info {
   max-width: 68em;
   margin-left: auto;
@@ -4944,28 +5007,28 @@ footer.site-footer .site-info::after {
   content: "";
   display: table;
 }
-/* line 346, sass/_dinamarca.scss */
+/* line 393, sass/_dinamarca.scss */
 footer.site-footer .site-info p {
   color: #ffffff;
   text-align: center;
 }
 
 /** FOOTER IN EACH POST **/
-/* line 354, sass/_dinamarca.scss */
+/* line 401, sass/_dinamarca.scss */
 footer.entry-footer,
 footer.comment-meta {
   background-color: #eee;
   padding: 5px;
 }
 
-/* line 360, sass/_dinamarca.scss */
+/* line 407, sass/_dinamarca.scss */
 footer.comment-meta {
   padding: 10px;
   background-color: #ffffff;
 }
 
 /*** GALLERY **/
-/* line 368, sass/_dinamarca.scss */
+/* line 415, sass/_dinamarca.scss */
 div.gallery {
   padding: 20px;
 }
@@ -4976,7 +5039,7 @@ div.gallery ul::after {
   display: table;
 }
 @media screen and (max-width: 767px) {
-  /* line 372, sass/_dinamarca.scss */
+  /* line 419, sass/_dinamarca.scss */
   div.gallery ul li.block {
     float: left;
     display: block;
@@ -4997,7 +5060,7 @@ div.gallery ul::after {
   }
 }
 @media screen and (min-width: 768px) {
-  /* line 372, sass/_dinamarca.scss */
+  /* line 419, sass/_dinamarca.scss */
   div.gallery ul li.block {
     float: left;
     display: block;
@@ -5026,7 +5089,7 @@ div.gallery ul::after {
   }
 }
 @media screen and (min-width: 992px) {
-  /* line 372, sass/_dinamarca.scss */
+  /* line 419, sass/_dinamarca.scss */
   div.gallery ul li.block {
     float: left;
     display: block;

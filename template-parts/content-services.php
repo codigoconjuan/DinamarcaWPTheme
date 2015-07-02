@@ -14,13 +14,31 @@
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dinamarca' ),
-				'after'  => '</div>',
-			) );
-		?>
 	</div><!-- .entry-content -->
+
+	<ul class="services">
+
+		<?php $id =  get_the_ID(); ?>
+
+	  	<?php $args = array(
+					'post_type' => 'page',
+					'post_parent' => $id
+			); ?>
+			<?php $services = new WP_Query($args); while($services->have_posts()): $services->the_post(); ?>
+
+				<li>
+						<a href="<?php the_permalink(); ?>">
+								<?php the_title(); ?>
+
+								<?php the_post_thumbnail(''); ?>
+						</a>
+				</li>
+
+
+
+
+			<?php endwhile; wp_reset_postdata(); ?>
+	</ul>
 
 	<footer class="entry-footer">
 		<?php edit_post_link( esc_html__( 'Edit', 'dinamarca' ), '<span class="edit-link">', '</span>' ); ?>

@@ -1,6 +1,7 @@
 jQuery(function($){
 
   jQuery('div.menu').slicknav();
+  jQuery('ul.menu').slicknav();
 
   // GALERIA LIGHTBOX
   jQuery('.gallery a').each(function(){
@@ -11,4 +12,8 @@ jQuery(function($){
     'resizeDuration':1000,
     'showImageNumberLabel': false
   })
+
+  jQuery('#search-icon').on('click', function(){
+        $(this).parent().parent().toggleClass('active');
+  });
 });

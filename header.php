@@ -76,7 +76,15 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+					<div class="container">
+								   	<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+
+								  	<i id="search-icon" class="fa fa-search"></i>
+
+										<div class="search">
+													<?php echo  get_search_form(); ?>
+										</div>
+					</div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 

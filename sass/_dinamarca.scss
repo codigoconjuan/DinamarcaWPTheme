@@ -84,11 +84,43 @@ figure {
 /** NAV **/
 .main-navigation {
 	display:none;
+	height: 44px;
+  overflow: hidden;
+	transition: all 1s ease;
+
 
 	@include media($desktop){
 		display:block;
 		background-color:$darkerCarbon;
 
+  &.active {
+
+			height:92px;
+	}
+
+
+
+		.container {
+				@include outer-container;
+			  position:relative;
+
+
+
+					i {
+						position: absolute;
+						top:0;
+						right:0;
+						color:$white;
+						font-size:1.5em;
+					  padding:10px;
+
+					}
+					i:hover {
+							cursor:pointer;
+					}
+		}
+
+		ul.menu,
 		div.menu {
 				@include outer-container;
 				@include pad(0 0 0 25px);
@@ -162,13 +194,28 @@ figure {
 header.site-header {
 
 		&.header-image {
-				background-attachment: fixed;
-				background-size:cover;
-
+				background-attachment: scroll;
+				background-position: center center;
+				background-repeat:no-repeat;
+				background-size: cover;
+				height: 80vh;
+				padding:0;
+				@include media ($desktop) {
+						background-attachment: fixed;
+						background-size:cover;
+						height: auto;
+				}
 				.site-branding {
-					padding:80px 0;
+					height: 80vh;
 					margin:0;
+					padding:0;
+					padding-top: 200px;
 					background-image:url(img/bg-pattern.png);
+
+					@include media ($desktop) {
+							padding:80px 0;
+							height:auto;
+					}
 				}
 		}
 }
