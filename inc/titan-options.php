@@ -160,11 +160,11 @@ function dinamarca_create_options() {
 	) );
 
 	$generalTab->createOption( array(
-	    'name' => __( 'Custom Javascript Code', 'dinamarca' ),
-	    'id' => 'custom_js',
-	    'type' => 'code',
-	    'desc' => __( 'If you want to add some additional Javascript code into your site, add them here and it will be included in the frontend header. No need to add <code>script</code> tags', 'dinamarca' ),
-	    'lang' => 'javascript',
+	    'name' => __('Show Author Bio', 'dinamarca'),
+	    'id' => 'author_bio',
+	    'type' => 'checkbox',
+	    'desc' => __('Check to True', 'dinamarca'),
+	    'default' => false
 	) );
 
 	$generalTab->createOption( array(
@@ -188,17 +188,4 @@ function dinamarca_create_options() {
 	) );
 
 
-	$logoImagen = $adminPanel->createTab( array(
-	    'name' => __( 'Logo', 'dinamarca' ),
-	) );
-
-	$logoImagen->createOption( array(
-	    'name' => 'My Upload Option',
-	    'id' => 'my_upload_option',
-	    'type' => 'upload',
-	    'desc' => 'Upload your image'
-	) );
-	$logoImagen->createOption( array(
-	    'type' => 'save',
-	) );
 }

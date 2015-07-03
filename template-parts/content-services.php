@@ -32,6 +32,10 @@
 
 								<?php the_post_thumbnail(''); ?>
 						</a>
+
+						<p>
+							<?php the_excerpt(); ?>
+						</p>
 				</li>
 
 
