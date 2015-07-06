@@ -16,4 +16,9 @@ jQuery(function($){
   jQuery('#search-icon').on('click', function(){
         $(this).parent().parent().toggleClass('active');
   });
+
+    jQuery('.slider').bxSlider({
+        auto: true,
+        mode:'fade'
+    });
 });

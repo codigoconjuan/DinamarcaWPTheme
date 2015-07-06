@@ -31,7 +31,7 @@
 			</div>
 
 
-				<?php if (has_post_thumbnail() ) { ?>
+			  <?php if (has_post_thumbnail() ) { ?>
 			  <?php $postThumbnail =  get_the_post_thumbnail(); ?>
 				<div class="header-content">
 							<div class="featured-image">
@@ -42,10 +42,16 @@
 
 			<div class="posted-on <?php echo (!empty($postThumbnail) ? 'header-image' : 'no-image'); ?>" >
 						<?php $image =  get_the_author_meta('_yourprefix_user_avatar'); ?>
-						<?php $niceName =  get_the_author_meta('display_name'); ?>
+						<?php if ($image != '') { ?>
+							<img class="author-image" src="<?php echo $image; ?>" alt="Image of <?php echo $niceName ?>" />
+						<?php 	} ?>
 
-						<img class="author-image" src="<?php echo $image; ?>" alt="Image of <?php echo $niceName ?>" />
-						<span class="author"><?php _e( 'Written by', 'dinamarca' ); ?> <?php the_author_posts_link(); ?></span>
+
+						<?php $niceName =  get_the_author_meta('display_name'); ?>
+						<?php if ($niceName != '')  { ?>
+							<span class="author"><?php _e( 'Written by', 'dinamarca' ); ?> <?php the_author_posts_link(); ?></span>
+
+						<?php }?>
 			</div>
 
 			</header><!-- .entry-header -->

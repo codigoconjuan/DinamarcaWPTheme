@@ -61,7 +61,7 @@ function dinamarca_create_options() {
 	    'id' => 'sample_color1',
 	    'type' => 'color',
 	    'desc' => __( 'This color changes the background of your header', 'dinamarca' ),
-	    'default' => '#FFFFFF',
+	    'default' => '#363f48',
 	  	'css' => 'header .site-branding {
 									background-color: value!important
 						  }

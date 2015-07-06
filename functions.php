@@ -40,6 +40,7 @@ function dinamarca_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	add_image_size('gallery-thumb', 330,200,true);
+	add_image_size('slider', 1100,400,true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -120,6 +121,9 @@ function dinamarca_scripts() {
 	wp_register_style('lightbox', get_template_directory_uri() . '/css/lightbox.css', array(), '1.0', 'all');
 	wp_enqueue_style('lightbox'); // Enqueue it!
 
+	wp_register_style('flexslider', get_template_directory_uri() . '/css/flexslider.css', array(), '1.0', 'all');
+	wp_enqueue_style('flexslider'); // Enqueue it!
+
 	wp_enqueue_script('jquery', get_template_directory_uri() . 'js/jquery-1.11.3.min.js');
 
 	wp_enqueue_script( 'dinamarca-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
@@ -129,6 +133,8 @@ function dinamarca_scripts() {
 	wp_enqueue_script( 'slicknav', get_template_directory_uri() . '/js/jquery.slicknav.min.js', array('jquery'), '20130115', true );
 
 	wp_enqueue_script( 'lightbox', get_template_directory_uri() . '/js/lightbox.js', array('jquery'), '20150114', true );
+
+	wp_enqueue_script( 'flexsliderjs', get_template_directory_uri() . '/js/jquery.flexslider.js', array('jquery'), '20150114', true );
 
   wp_enqueue_script( 'scripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '20130115', true );
 
@@ -162,6 +168,12 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+/**
+ * Load Post Types
+ */
+require get_template_directory() . '/inc/post-types.php';
 
 
 /**

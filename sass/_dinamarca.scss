@@ -17,7 +17,6 @@ figure {
 	margin:0;
 }
 
-
 a,
 a:visited,
 a:hover,
@@ -239,6 +238,25 @@ header .logo {
 					@include shift(3);
 			}
 	}
+}
+
+#slider {
+  margin-top: 20px;
+  .bx-wrapper {
+    background-color: transparent;
+    border:none;
+    box-shadow: none;
+  }
+}
+
+.slider {
+  margin: 0 auto;
+
+  background-color: transparent;
+
+  @include media($desktop) {
+     @include outer-container;
+  }
 }
 
 /** MAIN CONTENT**/

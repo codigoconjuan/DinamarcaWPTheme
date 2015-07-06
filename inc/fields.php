@@ -554,3 +554,30 @@ function yourprefix_register_user_profile_metabox() {
 		'type' => 'text_url',
 	) );
 }
+
+
+/** Fields Slider */
+
+function slider_fields() {
+	$prefix = '_slider_fields';
+
+	$slider = new_cmb2_box( array(
+		'id'            => $prefix . '_metabox',
+		'title'         => __( 'More Fields', 'cmb2' ),
+		'object_types'  => array( 'slider', ), // Post type
+	) );
+
+	$slider->add_field( array(
+		'name' => __( 'URL', 'cmb2' ),
+		'desc' => __( 'External URL', 'cmb2' ),
+		'id'   => $prefix . '_slider_url',
+		'type' => 'text_url',
+	) );
+	$slider->add_field( array(
+		'name' => __( 'Open in New Window', 'cmb2' ),
+		'desc' => __( 'Check to open in new Window', 'cmb2' ),
+		'id'   => $prefix . '_slider_check',
+		'type' => 'checkbox',
+	) );
+}
+add_action( 'cmb2_init', 'slider_fields' );
