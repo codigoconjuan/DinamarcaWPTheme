@@ -4,6 +4,7 @@ $desktop: new-breakpoint(min-width 992px);
 
 $title-font-family: 'Pinyon Script', cursive;
 
+
 /** Colores **/
 $white : #ffffff;
 $smoke : #2f3038;
@@ -15,6 +16,9 @@ $darkerCarbon: #242A30;
 
 figure {
 	margin:0;
+}
+h2 {
+  font-family: verdana, geneva, sans-serif;
 }
 
 a,
@@ -241,6 +245,8 @@ header .logo {
 }
 
 #slider {
+  @include outer-container;
+  @include fill-parent;
   margin-top: 20px;
   .bx-wrapper {
     background-color: transparent;
@@ -257,6 +263,41 @@ header .logo {
   @include media($desktop) {
      @include outer-container;
   }
+}
+
+/**** Testimonials **/
+
+.testimonials-section {
+  background-color:$carbon;
+  .wrap-testimonials {
+    @include outer-container;
+    @include fill-parent;
+    @extend .hentry;
+    background-color: transparent!important;
+
+    h2 {
+        text-align: center;
+        color: $white;
+        font-size: 28px;
+        font-size: rem(28);
+        margin-bottom: 20px;
+    }
+    ul {
+      list-style: none;
+      li {
+          color: $white;
+          h3 {
+            text-align: right;
+          }
+      }
+    }
+  }
+
+}
+
+
+blockquote:before p {
+  content: '"';
 }
 
 /** MAIN CONTENT**/

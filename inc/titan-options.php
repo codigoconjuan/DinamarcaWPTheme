@@ -153,6 +153,47 @@ function dinamarca_create_options() {
 			'type' => 'save',
 	) );
 
+    /** Front Page **/
+    $frontPage = $adminPanel->createTab( array(
+        'name' => __( 'Front Page', 'dinamarca' ),
+    ) );
+
+    $frontPage->createOption( array(
+        'name' => __('Show Slider', 'dinamarca'),
+        'id' => 'show_slider',
+        'type' => 'checkbox',
+        'desc' => __('Check to True', 'dinamarca'),
+        'default' => false
+    ) );
+
+    $frontPage->createOption( array(
+        'name' => __('Show Services', 'dinamarca'),
+        'id' => 'show_services',
+        'type' => 'checkbox',
+        'desc' => __('Check to True', 'dinamarca'),
+        'default' => false
+    ) );
+
+
+    $frontPage->createOption( array(
+        'name' => __('Show Testimonials', 'dinamarca'),
+        'id' => 'show_testimonials',
+        'type' => 'checkbox',
+        'desc' => __('Check to True', 'dinamarca'),
+        'default' => false
+    ) );
+    $frontPage->createOption( array(
+        'name' => __('Show Blog', 'dinamarca'),
+        'id' => 'show_blog',
+        'type' => 'checkbox',
+        'desc' => __('Check to True', 'dinamarca'),
+        'default' => false
+    ) );
+
+
+    $frontPage->createOption( array(
+        'type' => 'save',
+    ) );
 
 	/** GENERAL **/
 	$generalTab = $adminPanel->createTab( array(
@@ -186,6 +227,7 @@ function dinamarca_create_options() {
 	$footerTab->createOption( array(
 	    'type' => 'save',
 	) );
+
 
 
 }
