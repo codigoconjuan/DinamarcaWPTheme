@@ -62,17 +62,111 @@
 			<div class="author-bio">
 					<h2><?php echo esc_html_x( 'Author Bio', 'author bio', 'dinamarca' ); ?></h2>
 
-					<?php $image =  esc_attr(get_the_author_meta('_yourprefix_user_avatar')); ?>
-					<?php $facebookURL =  get_the_author_meta('_yourprefix_user_facebookurl'); ?>
-					<?php $twitterURL =  get_the_author_meta('_yourprefix_user_twitterurl'); ?>
-					<?php $googleplusURL =  get_the_author_meta('_yourprefix_user_googleplusurl'); ?>
-					<?php $linkediInURL =  get_the_author_meta('_yourprefix_user_linkedinurl'); ?>
 
-					<?php $niceName =  get_the_author_meta('display_name'); ?>
 
-					<?php echo $image; ?>
-					<?php echo $niceName; ?>
-			</div>
+
+
+
+				  <?php $image =  esc_attr(get_the_author_meta('_user_avatar')); ?>
+					<?php if ($image != '') { ?>
+							<div class="bio-img">
+									<img src="<?php echo $image; ?>" alt="Image of <?php echo $niceName; ?>">
+							</div>
+					<?php } ?>
+
+							<div class="bio-information">
+
+										<?php $niceName =  get_the_author_meta('display_name'); ?>
+										<?php if(!empty($niceName)) { ?>
+												<h3><?php echo $niceName; ?></h3>
+										<?php } ?>
+
+										<?php $bio =  get_the_author_meta('description'); ?>
+										<?php if(!empty($bio)) { ?>
+												<p><?php echo $bio; ?></p>
+										<?php } ?>
+
+										<ul class="social-links">
+												<?php $dribbleUrl =  get_the_author_meta('_user_dribbleurl'); ?>
+												<?php if(!empty($dribbleUrl)) { ?>
+														<li><a href="<?php echo $dribbleUrl; ?>" target="_blank"></a></li>
+												<?php } ?>
+
+												<?php $facebookUrl =  get_the_author_meta('_user_facebookurl'); ?>
+												<?php if(!empty($facebookUrl)) { ?>
+														<li><a href="<?php echo $facebookUrl; ?>" target="_blank"></a></li>
+												<?php } ?>
+
+												<?php $flickrUrl =  get_the_author_meta('_user_flickrUrl'); ?>
+												<?php if(!empty($flickrUrl)) { ?>
+														<li><a href="<?php echo $flickrUrl; ?>" target="_blank"></a></li>
+												<?php } ?>
+
+												<?php $githubUrl =  get_the_author_meta('_user_githuburl'); ?>
+												<?php if(!empty($githubUrl)) { ?>
+														<li><a href="<?php echo $githubUrl; ?>" target="_blank"></a></li>
+												<?php } ?>
+
+												<?php $googleplusUrl =  get_the_author_meta('_user_googleplusurl'); ?>
+												<?php if(!empty($googleplusUrl)) { ?>
+														<li><a href="<?php echo $googleplusUrl; ?>" target="_blank"></a></li>
+												<?php } ?>
+
+												<?php $instagramUrl =  get_the_author_meta('_user_instagramrUrl'); ?>
+												<?php if(!empty($instagramUrl)) { ?>
+														<li><a href="<?php echo $instagramUrl; ?>" target="_blank"></a></li>
+												<?php } ?>
+
+												<?php $jsfiddlerUrl =  get_the_author_meta('_user_jsfiddlerUrl'); ?>
+												<?php if(!empty($jsfiddlerUrl)) { ?>
+														<li><a href="<?php echo $jsfiddlerUrl; ?>" target="_blank"></a></li>
+												<?php } ?>
+
+												<?php $linkediInUrl =  get_the_author_meta('_user_linkedinurl'); ?>
+												<?php if(!empty($linkediInUrl)) { ?>
+														<li><a href="<?php echo $linkediInUrl; ?>" target="_blank"></a></li>
+												<?php } ?>
+
+												<?php $pinterestUrl =  get_the_author_meta('_user_pinteresturl'); ?>
+												<?php if(!empty($pinterestUrl)) { ?>
+														<li><a href="<?php echo $pinterestUrl; ?>" target="_blank"></a></li>
+												<?php } ?>
+
+												<?php $soundcloudUrl =  get_the_author_meta('_user_soundCloudrUrl'); ?>
+												<?php if(!empty($soundcloudUrl)) { ?>
+														<li><a href="<?php echo $soundcloudUrl; ?>" target="_blank"></a></li>
+												<?php } ?>
+
+												<?php $stackoverflowUrl =  get_the_author_meta('_user_stackoverflowrUrl'); ?>
+												<?php if(!empty($stackoverflowUrl)) { ?>
+														<li><a href="<?php echo $stackoverflowUrl; ?>" target="_blank"></a></li>
+												<?php } ?>
+
+												<?php $tumblUrl =  get_the_author_meta('_user_tumblUrl'); ?>
+												<?php if(!empty($tumblUrl)) { ?>
+														<li><a href="<?php echo $tumblUrl; ?>" target="_blank"></a></li>
+												<?php } ?>
+
+												<?php $twitterURL =  get_the_author_meta('_user_twitterurl'); ?>
+												<?php if(!empty($twitterURL)) { ?>
+														<li><a href="<?php echo $twitterURL; ?>" target="_blank"></a></li>
+												<?php } ?>
+
+												<?php $vimeo =  get_the_author_meta('_user_vimeorUrl'); ?>
+												<?php if(!empty($vimeo)) { ?>
+														<li><a href="<?php echo $vimeo; ?>" target="_blank"></a></li>
+												<?php } ?>
+
+												<?php $youtubeUrl =  get_the_author_meta('_user_youtubeurl'); ?>
+												<?php if(!empty($youtubeUrl)) { ?>
+														<li><a href="<?php echo $youtubeUrl; ?>" target="_blank"></a></li>
+												<?php } ?>
+
+
+
+										</ul>
+							</div> <!--.bio-information-->
+			</div> <!--.author-bio-->
 <?php } ?>
 
 

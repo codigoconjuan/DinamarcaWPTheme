@@ -41,6 +41,7 @@ function dinamarca_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_image_size('gallery-thumb', 330,200,true);
 	add_image_size('slider', 1100,400,true);
+	add_image_size('blogPost', 674,379,true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(

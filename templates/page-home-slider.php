@@ -35,4 +35,12 @@ get_header(); ?>
 
 
 
+
+<?php // Load Testimonials ?>
+<?php $titan = TitanFramework::getInstance( 'dinamarca' ); ?>
+<?php if ($titan->getOption( 'show_blog' )) { ?>
+    <?php get_template_part( 'template-parts/index', 'blog' ); ?>
+<?php } ?>
+
+
 <?php get_footer(); ?>

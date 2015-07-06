@@ -64,10 +64,10 @@ function dinamarca_create_options() {
 	    'default' => '#363f48',
 	  	'css' => 'header .site-branding {
 									background-color: value!important
-						  }
-							h1.widget-title {
+						    }
+							  h1.widget-title {
 									color:value!important
-						  }',
+						    }',
 	) );
 
 

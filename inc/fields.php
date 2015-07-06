@@ -475,79 +475,123 @@ add_action( 'cmb2_init', 'dinamarca_gallery' );
 
 
 
-add_action( 'cmb2_init', 'yourprefix_register_user_profile_metabox' );
+add_action( 'cmb2_init', 'user_profile' );
 /**
  * Hook in and add a metabox to add fields to the user profile pages
  */
-function yourprefix_register_user_profile_metabox() {
+function user_profile() {
 	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_yourprefix_user_';
+	$prefix = '_user_';
 	/**
 	 * Metabox for the user profile screen
 	 */
-	$cmb_user = new_cmb2_box( array(
+	$user_bio = new_cmb2_box( array(
 		'id'               => $prefix . 'edit',
 		'title'            => __( 'User Profile Metabox', 'cmb2' ),
 		'object_types'     => array( 'user' ), // Tells CMB2 to use user_meta vs post_meta
 		'show_names'       => true,
 		'new_user_section' => 'add-new-user', // where form will show on new user page. 'add-existing-user' is only other valid option.
 	) );
-	$cmb_user->add_field( array(
+	$user_bio->add_field( array(
 		'name'     => __( 'Extra Info', 'cmb2' ),
 		'desc'     => __( 'field description (optional)', 'cmb2' ),
 		'id'       => $prefix . 'extra_info',
 		'type'     => 'title',
 		'on_front' => false,
 	) );
-	$cmb_user->add_field( array(
+	$user_bio->add_field( array(
 		'name'    => __( 'Avatar', 'cmb2' ),
 		'desc'    => __( 'Use a Square Image for this Recommended Size 150x150', 'cmb2' ),
 		'id'      => $prefix . 'avatar',
 		'type'    => 'file',
 	) );
-	$cmb_user->add_field( array(
-		'name' => __( 'Facebook URL', 'cmb2' ),
-		'desc' => __( 'Add your URL to your Facebook  profile', 'cmb2' ),
-		'id'   => $prefix . 'facebookurl',
-		'type' => 'text_url',
-	) );
-	$cmb_user->add_field( array(
-		'name' => __( 'Twitter URL', 'cmb2' ),
-		'desc' => __( 'Add your URL to your Twitter  profile', 'cmb2' ),
-		'id'   => $prefix . 'twitterurl',
-		'type' => 'text_url',
-	) );
-	$cmb_user->add_field( array(
-		'name' => __( 'Google+ URL', 'cmb2' ),
-		'desc' => __( 'Add your URL to your Google+  profile', 'cmb2' ),
-		'id'   => $prefix . 'googleplusurl',
-		'type' => 'text_url',
-	) );
-	$cmb_user->add_field( array(
-		'name' => __( 'Linkedin URL', 'cmb2' ),
-		'desc' => __( 'Add your URL to your Linkedin  profile', 'cmb2' ),
-		'id'   => $prefix . 'linkedinurl',
-		'type' => 'text_url',
-	) );
-	$cmb_user->add_field( array(
-		'name' => __( 'GitHub URL', 'cmb2' ),
-		'desc' => __( 'Add your URL to your Github  profile', 'cmb2' ),
-		'id'   => $prefix . 'githuburl',
-		'type' => 'text_url',
-	) );
-	$cmb_user->add_field( array(
+
+	/** SOCIALS **/
+	$user_bio->add_field( array(
 		'name' => __( 'Dribble URL', 'cmb2' ),
 		'desc' => __( 'Add your URL to your   profile', 'cmb2' ),
 		'id'   => $prefix . 'dribbleurl',
 		'type' => 'text_url',
 	) );
-	$cmb_user->add_field( array(
+	$user_bio->add_field( array(
+		'name' => __( 'Facebook URL', 'cmb2' ),
+		'desc' => __( 'Add your URL to your Facebook  profile', 'cmb2' ),
+		'id'   => $prefix . 'facebookurl',
+		'type' => 'text_url',
+	) );
+	$user_bio->add_field( array(
+		'name' => __( 'Flickr URL', 'cmb2' ),
+		'desc' => __( 'Add your URL to your Flickr  profile', 'cmb2' ),
+		'id'   => $prefix . 'flickrUrl',
+		'type' => 'text_url',
+	) );
+	$user_bio->add_field( array(
+		'name' => __( 'GitHub URL', 'cmb2' ),
+		'desc' => __( 'Add your URL to your Github  profile', 'cmb2' ),
+		'id'   => $prefix . 'githuburl',
+		'type' => 'text_url',
+	) );
+	$user_bio->add_field( array(
+		'name' => __( 'Google+ URL', 'cmb2' ),
+		'desc' => __( 'Add your URL to your Google+  profile', 'cmb2' ),
+		'id'   => $prefix . 'googleplusurl',
+		'type' => 'text_url',
+	) );
+	$user_bio->add_field( array(
+		'name' => __( 'Instagram URL', 'cmb2' ),
+		'desc' => __( 'Add your URL to your Instagram  profile', 'cmb2' ),
+		'id'   => $prefix . 'instagramrUrl',
+		'type' => 'text_url',
+	) );
+	$user_bio->add_field( array(
+		'name' => __( 'JSFiddle URL', 'cmb2' ),
+		'desc' => __( 'Add your URL to your JSFiddle  profile', 'cmb2' ),
+		'id'   => $prefix . 'jsfiddlerUrl',
+		'type' => 'text_url',
+	) );
+	$user_bio->add_field( array(
+		'name' => __( 'Linkedin URL', 'cmb2' ),
+		'desc' => __( 'Add your URL to your Linkedin  profile', 'cmb2' ),
+		'id'   => $prefix . 'linkedinurl',
+		'type' => 'text_url',
+	) );
+	$user_bio->add_field( array(
 		'name' => __( 'Pinterest URL', 'cmb2' ),
 		'desc' => __( 'Add your URL to your Pinterest profile', 'cmb2' ),
 		'id'   => $prefix . 'pinteresturl',
 		'type' => 'text_url',
 	) );
-	$cmb_user->add_field( array(
+	$user_bio->add_field( array(
+		'name' => __( 'SoundCloud URL', 'cmb2' ),
+		'desc' => __( 'Add your URL to your SoundCloud  profile', 'cmb2' ),
+		'id'   => $prefix . 'soundCloudrUrl',
+		'type' => 'text_url',
+	) );
+	$user_bio->add_field( array(
+		'name' => __( 'Stackoverflow URL', 'cmb2' ),
+		'desc' => __( 'Add your URL to your Stackoverflow  profile', 'cmb2' ),
+		'id'   => $prefix . 'stackoverflowrUrl',
+		'type' => 'text_url',
+	) );
+	$user_bio->add_field( array(
+		'name' => __( 'Tumblr URL', 'cmb2' ),
+		'desc' => __( 'Add your URL to your Tumblr  profile', 'cmb2' ),
+		'id'   => $prefix . 'tumblUrl',
+		'type' => 'text_url',
+	) );
+	$user_bio->add_field( array(
+		'name' => __( 'Twitter URL', 'cmb2' ),
+		'desc' => __( 'Add your URL to your Twitter  profile', 'cmb2' ),
+		'id'   => $prefix . 'twitterurl',
+		'type' => 'text_url',
+	) );
+	$user_bio->add_field( array(
+		'name' => __( 'Vimeo URL', 'cmb2' ),
+		'desc' => __( 'Add your URL to your Vimeo  profile', 'cmb2' ),
+		'id'   => $prefix . 'vimeorUrl',
+		'type' => 'text_url',
+	) );
+	$user_bio->add_field( array(
 		'name' => __( 'YouTube URL', 'cmb2' ),
 		'desc' => __( 'Add your URL to your Youtube  profile', 'cmb2' ),
 		'id'   => $prefix . 'youtubeurl',
