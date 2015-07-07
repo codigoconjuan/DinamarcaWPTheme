@@ -13,8 +13,26 @@ jQuery(function($){
     'showImageNumberLabel': false
   })
 
+
   jQuery('#search-icon').on('click', function(){
-        $(this).parent().parent().toggleClass('active');
+        var navbar = $(this).parent().parent();
+        var icon = $(this);
+        $(icon).addClass('active');
+        $(navbar).toggleClass('active');
+
+        if($('div.search').is(':visible')){
+          setTimeout(function(){
+              $('div.search').fadeOut('slow');
+          },0);
+        } else {
+          setTimeout(function(){
+              $('div.search').fadeIn('slow');
+          },1000);
+        }
+  });
+
+  jQuery('#search-icon.active').on('click',function() {
+
   });
 
     jQuery('.slider').bxSlider({

@@ -16,6 +16,7 @@ $black: #000000;
 $grey: #575757;
 $darkerCarbon: #242A30;
 $lightGrey: #C8C8C8;
+$lighter : #F9F9F9;
 
 
 figure {
@@ -134,16 +135,22 @@ a:focus {
 		}
 }
 /** NAV **/
+
+div.search {
+	display:none;
+}
 .main-navigation {
 	display:none;
 	height: 44px;
-  overflow: hidden;
+	-webkit-transition: all 1s ease;
 	transition: all 1s ease;
 	@include media($desktop){
 		display:block;
 		background-color:$darkerCarbon;
   &.active {
 			height:92px;
+			-webkit-transition-delay:1; /* Safari */
+			transition-delay: 1;
 	}
 		.container {
 				@include outer-container;
@@ -563,7 +570,6 @@ footer.site-footer {
 }
 
 /** FOOTER IN EACH POST **/
-footer.entry-footer,
 footer.comment-meta {
 	background-color:$snow;
 	@include pad(5px);
@@ -754,3 +760,65 @@ article .post-categories {
 .social-links li a[href*="vimeo.com"]::before { content: '\f194'; background-color:#17B3E8}
 
 .social-links li a[href*="youtube.com"]::before { content: '\f167'; background-color:#D52423}
+
+
+/** Services **/
+ul.services {
+	@include clearfix;
+	li.block {
+		background-color:$lighter ;
+		margin-bottom:20px;
+		@include pad(20px);
+		@include media($mobile)  {
+				@include span-columns(12);
+				@include omega(3n);
+		}
+		@include media($tablet)  {
+				@include omega-reset(3n);
+				@include span-columns(4);
+				@include omega(3n);
+		}
+		@include media($desktop) {
+				@include omega-reset(3n);
+				@include span-columns(4);
+				@include omega(3n);
+		}
+
+		h3 {
+				font-size: 22px;
+				font-size: rem(22);
+				font-weight:normal;
+				 @include media($desktop) {
+						height:62px;
+						height:rem(62);
+				}
+		}
+		p {
+			text-align:center;
+		}
+	}
+}
+
+.button-service {
+	width: 50%;
+	text-align:center;
+	padding: 10px 0;
+	margin: 0 auto;
+	display:block;
+	background-color:#34799e;
+	color:$white!important;
+	border-radius:10px;
+}
+
+.hvr-shutter-out-vertical:before {
+		background-color:#5694B5;
+}
+.hvr-shutter-out-vertical:hover:before,
+.hvr-shutter-out-vertical:focus:before,
+.hvr-shutter-out-vertical:active:before {
+	border-radius:10px;
+}
+
+.button-service:hover {
+	color:$white!important;
+}

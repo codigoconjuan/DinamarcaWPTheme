@@ -16,31 +16,21 @@
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->
 
+
+		<h2>Services</h2>
 	<ul class="services">
-
 		<?php $id =  get_the_ID(); ?>
-
 	  	<?php $args = array(
 					'post_type' => 'page',
 					'post_parent' => $id
 			); ?>
 			<?php $services = new WP_Query($args); while($services->have_posts()): $services->the_post(); ?>
-
-				<li>
-						<a href="<?php the_permalink(); ?>">
-								<?php the_title(); ?>
-
-								<?php the_post_thumbnail(''); ?>
-						</a>
-
-						<p>
-							<?php the_excerpt(); ?>
-						</p>
+				<li class="block">
+						<h3><?php the_title(); ?></h3>
+						<?php the_post_thumbnail(''); ?>
+					  <?php the_excerpt(); ?>
+						<a href="<?php the_permalink(); ?>" class="hvr-shutter-out-vertical button-service">Ver</a>
 				</li>
-
-
-
-
 			<?php endwhile; wp_reset_postdata(); ?>
 	</ul>
 
