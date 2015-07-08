@@ -63,7 +63,7 @@ function dinamarca_create_options() {
 	    'desc' => __( 'This color changes the background of your header', 'dinamarca' ),
 	    'default' => '#363f48',
 	  	'css' => 'header .site-branding {
-									background-color: value!important
+	  	                        background-color: value!important
 						    }
 							  h1.widget-title {
 									color:value!important

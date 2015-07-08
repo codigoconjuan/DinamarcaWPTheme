@@ -224,6 +224,11 @@ div.search {
 				font-size: 40px;
 				font-size: rem(40);
 				margin-bottom: 10px;
+                display:inline;
+
+           &:after {
+             display: none;
+           }
 		}
 		p.site-description {
 				@include fill-parent;

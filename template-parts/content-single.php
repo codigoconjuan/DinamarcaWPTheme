@@ -45,7 +45,11 @@
 				<?php $image =  get_the_author_meta('_yourprefix_user_avatar'); ?>
 				<?php $niceName =  get_the_author_meta('display_name'); ?>
 
-				<img class="author-image" src="<?php echo $image; ?>" alt="Image of <?php echo $niceName ?>" />
+                <?php if($image) { ?>
+                    <img class="author-image" src="<?php echo $image; ?>" alt="Image of <?php echo $niceName ?>" />
+                <?php } ?>
+
+
 				<span class="author"><?php echo esc_html_x( 'Written by', 'post author by', 'dinamarca' ); ?> <?php the_author_posts_link(); ?></span>
 	</div>
 
