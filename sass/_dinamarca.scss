@@ -18,12 +18,20 @@ $darkerCarbon: #242A30;
 $lightGrey: #C8C8C8;
 $lighter : #F9F9F9;
 
-
+p {
+	font-size: 16px;
+	font-size: rem(16);
+}
 figure {
 	margin:0;
 }
 h1 {
 	font-family: $h1-font-family;
+	font-size: 32px;
+	font-size: rem(32);
+}
+.entry-content h1:after {
+	display:none;
 }
 h1:after {
 	content: " ";
@@ -42,14 +50,19 @@ h2 {
 		margin-bottom: 30px;
 }
 
-h2:after {
-	content: " ";
-	display:block;
-	height: 1px;
-	width:100%;
-	background-color:$lightGrey;
-	margin-top:5px;
+h2.title {
+	@extend h2;
+
+	&:after {
+		content: " ";
+		display:block;
+		height: 1px;
+		width:100%;
+		background-color:$lightGrey;
+		margin-top:5px;
+	}
 }
+
 h3 {
     font-family: $title-font-family, verdana, geneva, sans-serif;
 		text-align: center;
@@ -73,21 +86,22 @@ a:focus {
 		.wrapper {
 			@include clearfix;
 			@include outer-container;
+			@include pad(3px);
 		}
-
 		.information {
-			  padding:10px;
+			  margin-top:0;
+		  	text-align:center;
 				margin-bottom:rem(10);
 				@include media($tablet) {
 						@include span-columns(4);
 						display:inline;
+						margin-top:5px;
 						margin-bottom:0;
+						text-align:left;
 				}
-
 				@include media($desktop) {
 						@include span-columns(3);
 				}
-
 				i {
 						color:$white;
 						font-size: rem(25);
@@ -117,6 +131,10 @@ a:focus {
 		.slicknav_btn {
 			background-color:transparent;
 		}
+		.slicknav_arrow {
+			font-size: 12px;
+			font-size: rem(12);
+		}
 		.slicknav_nav li {
 			border-top:1px solid #636366;
 			padding:6px 0;
@@ -124,13 +142,16 @@ a:focus {
 				  &.current_page_item {
 						background-color:$carbon;
 					}
-				  a, a:hover {
-					  padding: 0 20px;
+				  > a, a:hover {
+					  padding: 0 0 0 20px;
 					  font-size: 18px;
 					  line-height: 45px;
 						text-transform:uppercase;
 						color:$white!important;
 						background-color:transparent;
+						a {
+							color:$white!important;
+						}
 				}
 		}
 }
@@ -208,13 +229,18 @@ div.search {
 	top:2.7em;
 }
 
+header.site-header {
+	background-color:$carbon;
+}
 .site-branding {
+
 
 		@include pad(60px);
 
 		@include fill-parent;
 		text-align:center;
 		color:$white;
+
 
 		a{
 			color:$white;
@@ -230,6 +256,7 @@ div.search {
              display: none;
            }
 		}
+
 		p.site-description {
 				@include fill-parent;
 				font-size: 20px;
@@ -284,7 +311,8 @@ header .logo {
 #slider {
   @include outer-container;
   @include fill-parent;
-  margin-top: 20px;
+  margin-top: 0px;
+	margin-bottom:20px;
   .bx-wrapper {
     background-color: transparent;
     border:none;
@@ -294,9 +322,7 @@ header .logo {
 
 .slider {
   margin: 0 auto;
-
   background-color: transparent;
-
   @include media($desktop) {
      @include outer-container;
   }
@@ -304,11 +330,13 @@ header .logo {
 
 /**** Testimonials **/
 .testimonials-section {
+	@include pad(30px 0);
   background-color:$carbon;
   .wrap-testimonials {
     @include outer-container;
     @include fill-parent;
     @extend .hentry;
+		margin-bottom:0!important;
     background-color: transparent!important;
 
     h2 {
@@ -593,6 +621,8 @@ div.gallery {
 	ul {
 		@include clearfix;
 		li.block {
+			margin-bottom:20px;
+			margin-bottom:rem(20);
 			@include media($mobile)  {
 			    @include span-columns(6);
 			    @include omega(2n);
@@ -644,6 +674,11 @@ div.gallery {
 	}
 	&.no-image {
 		margin-top: 90px;
+		  img {
+				display:block;
+				position:relative;
+				margin: 0 auto;
+			}
 	}
 }
 
@@ -653,6 +688,7 @@ div.gallery {
 }
 
 article .post-categories {
+	  @include span-columns(4);
 		margin-bottom:20px;
 		margin-bottom:rem(20);
 		span.cat-links:before {
@@ -665,25 +701,39 @@ article .post-categories {
 			font-size: 1rem;
 		  content:"\f07b";
 		}
-
-
+}
+article .date-published {
+		  @include span-columns(4);
+			text-transform:uppercase;
+			font-weight:bold;
+			margin-bottom:20px;
+			margin-bottom:rem(20);
+				span:before {
+					display: block;
+					float: left;
+					margin-right: 10px;
+					margin-right: rem(10);
+					font-family: 'fontawesome';
+					font-size: 10px;
+					font-size: 1rem;
+					content:"\f073";
+				}
 }
 .post-tags {
-	margin-bottom:20px;
-	margin-bottom:rem(20);
-  .tags-links:before {
-
-
-		display: block;
-		float: left;
-		margin-right: 10px;
-		margin-right: rem(10);
-		font-family: 'fontawesome';
-		font-size: 10px;
-		font-size: 1rem;
-		content:"\f02b";
-
-		}
+		  @include span-columns(4);
+			@include omega();
+			margin-bottom:20px;
+			margin-bottom:rem(20);
+			  .tags-links:before {
+					display: block;
+					float: left;
+					margin-right: 10px;
+					margin-right: rem(10);
+					font-family: 'fontawesome';
+					font-size: 10px;
+					font-size: 1rem;
+					content:"\f02b";
+					}
 }
 
 #{$all-buttons},
@@ -706,6 +756,39 @@ article .post-categories {
 	background-color:$snow;
 	padding: 20px;
 	padding:rem(20);
+	@include clearfix;
+
+	div.bio-img {
+		@include fill-parent;
+		text-align:center;
+		margin-bottom:20px;
+		margin-bottom:rem(20);
+
+		@include media($tablet) {
+				@include span-columns(4);
+		}
+	}
+	div.bio-information {
+		@include fill-parent;
+		text-align:center;
+		margin-bottom:20px;
+		margin-bottom:rem(20);
+
+		@include media($tablet) {
+				@include span-columns(8);
+					@include omega();
+		}
+	}
+
+	ul.social-links {
+		@include fill-parent;
+		 clear:both;
+	}
+
+	ul li {
+		margin-bottom:5px;
+		margin-bottom:rem(5);
+	}
 
 }
 
@@ -718,7 +801,18 @@ article .post-categories {
 .social-links li {
     position: relative;
     display:  inline-block;
+}
+#social-menu {
 
+	@include media($desktop) {
+			float:right;
+	}
+}
+#social-menu.social-links li a {
+	font-size:0;
+}
+#social-menu.social-links li a::before {
+	background-color:transparent;
 }
 
 .social-links li a:before {
@@ -788,7 +882,6 @@ ul.services {
 				@include span-columns(4);
 				@include omega(3n);
 		}
-
 		h3 {
 				font-size: 22px;
 				font-size: rem(22);
@@ -798,7 +891,15 @@ ul.services {
 						height:rem(62);
 				}
 		}
+		img {
+			margin: 0 auto;
+			display:block;
+			margin-bottom:20px;
+		}
 		p {
+			font-family: $title-font-family;
+			font-size: rem(18);
+			font-size:18px;
 			text-align:center;
 		}
 	}
@@ -826,4 +927,42 @@ ul.services {
 
 .button-service:hover {
 	color:$white!important;
+}
+
+
+/**** PORTFOLIO ***/
+
+ul.portfolio {
+		@extend ul.services;
+		li.block {
+			padding:0;
+			position:relative;
+			overflow:hidden;
+
+			div.title-portfolio {
+				transition: all .3s ease;
+				position: absolute;
+				left:0;
+				height:100%;
+				width:100%;
+				background-color:rgba($carbon, .8);
+				padding:60px;
+
+				div.center-content {
+						position:relative;
+
+						h3 {
+							color:$white;
+							position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						}
+				}
+			}
+			img {
+				margin-bottom:0;
+				width:100%;
+			}
+		}
+
 }

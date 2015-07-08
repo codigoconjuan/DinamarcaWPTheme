@@ -1,6 +1,6 @@
 <div id="blog" class="blog-section">
       <div class="entry-content wrap-blog">
-          <h2>Latest Blog Post</h2>
+          <h2 class="title">Latest Blog Post</h2>
           <?php $args = array(
               'post_type' => 'post',
               'posts_per_page' => 2,

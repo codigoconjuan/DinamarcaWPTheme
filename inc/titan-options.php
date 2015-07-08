@@ -72,7 +72,7 @@ function dinamarca_create_options() {
 
 
 	$section->createOption( array(
-	    'name' => 'My Upload Option',
+	    'name' => 'Upload your Logo',
 	    'id' => 'logo_imagen',
 	    'type' => 'upload',
 	    'desc' => 'Upload your Logo',
@@ -88,7 +88,7 @@ function dinamarca_create_options() {
 			'default' => '',
 			'livepreview' => '',
 			'css' => 'header.site-header {
-									background-image: value!important
+									background: value!important
 							}',
 	) );
 	/**

@@ -1,7 +1,16 @@
 jQuery(function($){
 
-  jQuery('div.menu').slicknav();
-  jQuery('ul.menu').slicknav();
+  jQuery('div.menu').slicknav({
+    allowParentLinks: true
+  });
+  jQuery('ul.menu').slicknav({
+    allowParentLinks: true
+  });
+  jQuery('.slider').bxSlider({
+      auto: true,
+      mode:'fade'
+  });
+
 
   // GALERIA LIGHTBOX
   jQuery('.gallery a').each(function(){
@@ -31,12 +40,29 @@ jQuery(function($){
         }
   });
 
-  jQuery('#search-icon.active').on('click',function() {
+
+
+
+   var portfolio = document.getElementById( 'portfolio' );
+   if (portfolio != null && portfolio.value == '') {
+       var navegacion = portfolio.getElementsByTagName( 'li' );
+       var altura = navegacion[0].clientHeight;
+   }
+
+
+   jQuery('div.title-portfolio').each(function(i){
+     this.style.bottom = altura +'px';
+   });
+
+  jQuery('ul.portfolio li').on({
+        mouseenter: function () {
+          jQuery(this).find('div.title-portfolio').css({'bottom': 0+'px'});
+      },
+      mouseleave: function () {
+          jQuery(this).find('div.title-portfolio').css({'bottom': altura+'px'});
+      }
 
   });
 
-    jQuery('.slider').bxSlider({
-        auto: true,
-        mode:'fade'
-    });
+
 });

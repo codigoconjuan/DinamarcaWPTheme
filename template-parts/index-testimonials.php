@@ -1,6 +1,6 @@
 <div id="testimonials" class="testimonials-section">
     <div class="entry-content wrap-testimonials">
-        <h2>Testimonials</h2>
+        <h2 class="title">Testimonials</h2>
 
         <?php $args = array(
             'post_type' => 'testimonials',
