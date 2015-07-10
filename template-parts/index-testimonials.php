@@ -12,7 +12,7 @@
 
           <?php $testimonials = new WP_Query($args);  ?>
           <?php  $count = $testimonials->post_count; ?>
-          <ul class="testimonials <?php echo  $count == 1 ? 'no-slider' : 'slider';   ?>">
+          <ul class="testimonials <?php echo  $count == 1 ? 'no-slider' : 'slider-testimonial';   ?>">
               <?php  while($testimonials->have_posts()): $testimonials->the_post(); ?>
 
                         <li>

@@ -124,6 +124,26 @@ function dinamarca_widgets_init() {
 }
 add_action( 'widgets_init', 'dinamarca_widgets_init' );
 
+
+/**
+ * Register widget area Footer.
+ *
+ * @link http://codex.wordpress.org/Function_Reference/register_sidebar
+ */
+function footer_widget() {
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer', 'dinamarca' ),
+		'id'            => 'footer-widget-1',
+		'description'   => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s columns-4">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h1 class="widget-title ">',
+		'after_title'   => '</h1>',
+	) );
+}
+add_action( 'widgets_init', 'footer_widget' );
+
+
 /**
  * Enqueue scripts and styles.
  */

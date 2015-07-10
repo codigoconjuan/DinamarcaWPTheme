@@ -11,6 +11,12 @@ jQuery(function($){
       mode:'fade'
   });
 
+  jQuery('.testimonials-section .slider-testimonial').bxSlider({
+      auto: true,
+      mode:'fade',
+      pager:false,
+      autoHover:true
+  });
 
   // GALERIA LIGHTBOX
   jQuery('.gallery a').each(function(){

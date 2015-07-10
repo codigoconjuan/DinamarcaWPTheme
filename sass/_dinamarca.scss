@@ -5,8 +5,6 @@ $desktop: new-breakpoint(min-width 992px);
 $title-font-family:  'Merriweather', sans-serif;
 $h1-font-family: $title-font-family;
 
-
-
 /** Colores **/
 $white : #ffffff;
 $smoke : #2f3038;
@@ -361,11 +359,17 @@ header .logo {
 			margin-top:20px;
 			margin-top:rem(20);
 		}
-    ul {
+    ul.testimonials {
       list-style: none;
 
       li {
-          color: $white;
+				color: $white;
+					p {
+						background-image:url(img/quotes_left.png);
+						background-repeat:no-repeat;
+						background-position: top left;
+						padding-left: 80px;
+					}
           h3 {
             text-align: right;
           }
@@ -597,15 +601,69 @@ h1.widget-title {
 
 /** Footer **/
 footer.site-footer {
-		background-color:$carbon;
-		@include pad(20px 0);
-		.site-info {
-				@include outer-container;
 
-				p {
-						color:$white;
-						text-align:center;
-				}
+
+		background-color:$carbon;
+
+		.footer-widgets {
+			@include pad(20px 0 0 0);
+			@include outer-container;
+			color:$white;
+			font-weight:normal;
+			font-size: 14px;
+			font-size: rem(14);
+
+			h1.widget-title {
+				font-size: 24px;
+				font-size: rem(24);
+				text-align:center;
+			}
+
+			li {
+				clear:both;
+			}
+
+			a,a:before {
+				color:$white;
+			}
+
+			& > div {
+					margin-bottom:20px;
+					margin-bottom:rem(20);
+					@include media($mobile)  {
+					    @include span-columns(12);
+					    @include omega(2n);
+				  }
+				  @include media($tablet)  {
+					    @include omega-reset(2n);
+					    @include span-columns(6);
+					    @include omega(3n);
+				  }
+				  @include media($desktop) {
+					    @include omega-reset(4n);
+					    @include span-columns(4);
+					    @include omega(3n);
+				  }
+			}
+
+			& > div:last-child{
+					@include omega();
+			}
+		}
+		@include pad(20px 0 0 0);
+		.site-info {
+
+					margin-top:20px;
+					background-color:$darkerCarbon;
+					.content-footer{
+									@include pad(10px 0	);
+									@include outer-container;
+									p {
+											color:$white;
+											margin-bottom:0;
+											text-align:center;
+									}
+					}
 		}
 }
 
@@ -822,7 +880,39 @@ article .date-published {
 	background-color:transparent;
 }
 
-.social-links li a:before {
+.social-links li
+		a[href*="dribbble.com"]::before { content: '\f17d'; background-color:rgb(242, 103, 152)}
+
+		a[href*="facebook.com"]::before { content: '\f09a'; background-color:#3C599F;}
+
+		a[href*="flickr.com"]::before { content: '\f16e'; background-color:#FF0084}
+
+		a[href*="github.com"]::before { content: '\f09b'; background-color:rgb(50, 49, 49); }
+
+		a[href*="plus.google.com"]::before { content: '\f0d5'; background-color:#C63427}
+
+		a[href*="instagram.com"]::before { content: '\f16d'; background-color:rgb(93, 53, 41)}
+
+		a[href*="jsfiddle.net"]::before { content: '\f1cc'; background-color:rgb(61, 106, 162)}
+
+		a[href*="linkedin.com"]::before { content: '\f0e1'; background-color:#0177B5}
+
+		a[href*="pinterest.com"]::before { content: '\f0d2'; background-color:#CD2129 }
+
+
+		a[href*="soundcloud.com"]::before { content: '\f1be'; background-color:#F94100 }
+
+		a[href*="stackoverflow.com"]::before { content: '\f16c'; background-color:#E04006 }
+
+		a[href*="tumblr.com"]::before { content: '\f173'; background-color:#34465D }
+
+		a[href*="twitter.com"]::before { content: '\f099'; background-color:#2AA9E0}
+
+		a[href*="vimeo.com"]::before { content: '\f194'; background-color:#17B3E8}
+
+		a[href*="youtube.com"]::before { content: '\f167'; background-color:#D52423}
+
+		a:before {
     display: inline-block;
     vertical-align: top;
     padding: 0 5px;
@@ -835,37 +925,39 @@ article .date-published {
 		width:37px;
 		font-weight:normal;
 		border-radius:5px;
+		text-align:center;
 }
-.social-links li a[href*="dribbble.com"]::before { content: '\f17d'; background-color:rgb(242, 103, 152)}
-
-.social-links li a[href*="facebook.com"]::before { content: '\f09a'; background-color:#3C599F;}
-
-.social-links li a[href*="flickr.com"]::before { content: '\f16e'; background-color:#FF0084}
-
-.social-links li a[href*="github.com"]::before { content: '\f09b'; background-color:rgb(50, 49, 49); }
-
-.social-links li a[href*="plus.google.com"]::before { content: '\f0d5'; background-color:#C63427}
-
-.social-links li a[href*="instagram.com"]::before { content: '\f16d'; background-color:rgb(93, 53, 41)}
-
-.social-links li a[href*="jsfiddle.net"]::before { content: '\f1cc'; background-color:rgb(61, 106, 162)}
-
-.social-links li a[href*="linkedin.com"]::before { content: '\f0e1'; background-color:#0177B5}
-
-.social-links li a[href*="pinterest.com"]::before { content: '\f0d2'; background-color:#CD2129 }
 
 
-.social-links li a[href*="soundcloud.com"]::before { content: '\f1be'; background-color:#F94100 }
+footer a:before {
+	display:none;
+}
 
-.social-links li a[href*="stackoverflow.com"]::before { content: '\f16c'; background-color:#E04006 }
 
-.social-links li a[href*="tumblr.com"]::before { content: '\f173'; background-color:#34465D }
 
-.social-links li a[href*="twitter.com"]::before { content: '\f099'; background-color:#2AA9E0}
+#menu-social-menu.menu {
+	@extend ul.social-links;
+	display:block;
+	float:right;
 
-.social-links li a[href*="vimeo.com"]::before { content: '\f194'; background-color:#17B3E8}
 
-.social-links li a[href*="youtube.com"]::before { content: '\f167'; background-color:#D52423}
+	li {
+		display:inline;
+		margin-right: 20px;
+
+		&:last-child {
+			margin-right:0;
+		}
+		a {
+			font-size: 0;
+
+		}
+		a:before {
+				display:inline-block!important;
+		}
+	}
+}
+
 
 
 /** Services **/
