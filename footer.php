@@ -13,7 +13,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 				  <div class="site-info">
-								<p>All Rights Reserved  &copy; <?php echo date('Y'); ?></p>
+								<p>All Rights Reserved  &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
 					</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

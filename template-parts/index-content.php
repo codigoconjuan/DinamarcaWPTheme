@@ -6,7 +6,9 @@
  */
 
 ?>
+<?php $content =  get_the_content(); ?>
 
+<?php if($content != '') { ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('box'); ?>>
 
     <div class="entry-content">
@@ -14,3 +16,5 @@
     </div><!-- .entry-content -->
 
 </article><!-- #post-## -->
+
+<?php } ?>

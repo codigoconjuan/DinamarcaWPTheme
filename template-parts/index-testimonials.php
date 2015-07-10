@@ -9,13 +9,18 @@
             'posts_per_page' => -1
         ); ?>
 
-        <ul class="testimonials">
-            <?php $testimonials = new WP_Query($args); while($testimonials->have_posts()): $testimonials->the_post(); ?>
-                <li>
-                    <?php the_content(); ?>
-                    <h3>- <?php the_title(); ?></h3>
-                </li>
-            <?php endwhile; wp_reset_postdata(); ?>
-        </ul>
+
+          <?php $testimonials = new WP_Query($args);  ?>
+          <?php  $count = $testimonials->post_count; ?>
+          <ul class="testimonials <?php echo  $count == 1 ? 'no-slider' : 'slider';   ?>">
+              <?php  while($testimonials->have_posts()): $testimonials->the_post(); ?>
+
+                        <li>
+                            <?php the_content(); ?>
+                            <h3>- <?php echo get_the_title(); ?></h3>
+                        </li>
+
+             <?php endwhile; wp_reset_postdata(); ?>
+         </ul>
     </div>
 </div>

@@ -84,11 +84,12 @@ function dinamarca_setup() {
 	) );
 	 */
 
-	// Set up the WordPress core custom background feature.
+	/* Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'dinamarca_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+	*/
 }
 endif; // dinamarca_setup
 add_action( 'after_setup_theme', 'dinamarca_setup' );
@@ -173,7 +174,7 @@ require get_template_directory() . '/inc/extras.php';
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+//require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.

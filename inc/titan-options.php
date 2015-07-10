@@ -62,12 +62,16 @@ function dinamarca_create_options() {
 	    'type' => 'color',
 	    'desc' => __( 'This color changes the background of your header', 'dinamarca' ),
 	    'default' => '#363f48',
+			'livepreview' => '',
 	  	'css' => 'header .site-branding {
-	  	                        background-color: value!important
+	  	                        background-color: value!important;
 						    }
 							  h1.widget-title {
-									color:value!important
-						    }',
+									color:value!important;
+						    }
+								.main-navigation ul.menu li.current_page_item {
+									background-color:value!important;
+								}',
 	) );
 
 
@@ -88,7 +92,7 @@ function dinamarca_create_options() {
 			'default' => '',
 			'livepreview' => '',
 			'css' => 'header.site-header {
-									background: value!important
+									background-image: value!important
 							}',
 	) );
 	/**

@@ -311,7 +311,7 @@ header .logo {
 #slider {
   @include outer-container;
   @include fill-parent;
-  margin-top: 0px;
+  margin-top: 20px;
 	margin-bottom:20px;
   .bx-wrapper {
     background-color: transparent;
@@ -330,8 +330,14 @@ header .logo {
 
 /**** Testimonials **/
 .testimonials-section {
+
 	@include pad(30px 0);
   background-color:$carbon;
+	.bx-wrapper {
+		box-shadow:none;
+		border:none;
+		background:transparent;
+	}
   .wrap-testimonials {
     @include outer-container;
     @include fill-parent;
@@ -357,6 +363,7 @@ header .logo {
 		}
     ul {
       list-style: none;
+
       li {
           color: $white;
           h3 {
@@ -864,6 +871,8 @@ article .date-published {
 /** Services **/
 ul.services {
 	@include clearfix;
+	@include outer-container;
+
 	li.block {
 		background-color:$lighter ;
 		margin-bottom:20px;
