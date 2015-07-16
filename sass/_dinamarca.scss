@@ -420,7 +420,7 @@ box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 	height: 10px;
 	content: ' ';
 	left: 12px;
-	bottom: 12px;
+	bottom: 19px;
 	background: transparent;
 	-webkit-transform: skew(-5deg) rotate(-5deg);
 	-moz-transform: skew(-5deg) rotate(-5deg);
@@ -446,7 +446,7 @@ box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 
 /** MAIN CONTENT**/
 .site-content {
-		background-image:url(img/project_papper.png);
+	//	background-image:url(img/project_papper.png);
 		@include fill-parent;
 		@include media($desktop) {
 				@include pad(0 0 20px 0);
@@ -601,12 +601,24 @@ h1.widget-title {
 
 /** Footer **/
 footer.site-footer {
-
-
 		background-color:$carbon;
 
 		.footer-widgets {
-			@include pad(20px 0 0 0);
+			@include outer-container;
+
+			&.columns-0 > div{
+					 @include span-columns(3 of 12);
+			}
+			&.columns-1 > div{
+					 @include span-columns(12 of 12);
+			}
+			&.columns-2 > div{
+					 @include span-columns(6 of 12);
+			}
+			&.columns-3 > div{
+					 @include span-columns(4 of 12);
+			}
+
 			@include outer-container;
 			color:$white;
 			font-weight:normal;
@@ -614,45 +626,27 @@ footer.site-footer {
 			font-size: rem(14);
 
 			h1.widget-title {
-				font-size: 24px;
-				font-size: rem(24);
+				font-size: 18px;
+				font-size: rem(18);
 				text-align:center;
 			}
 
 			li {
 				clear:both;
 			}
-
 			a,a:before {
 				color:$white;
 			}
 
-			& > div {
-					margin-bottom:20px;
-					margin-bottom:rem(20);
-					@include media($mobile)  {
-					    @include span-columns(12);
-					    @include omega(2n);
-				  }
-				  @include media($tablet)  {
-					    @include omega-reset(2n);
-					    @include span-columns(6);
-					    @include omega(3n);
-				  }
-				  @include media($desktop) {
-					    @include omega-reset(4n);
-					    @include span-columns(4);
-					    @include omega(3n);
-				  }
-			}
-
-			& > div:last-child{
-					@include omega();
+			.widget_recent_entries a:before,
+			.widget_meta a:before,
+			.widget_recent_comments a:before,
+			.widget_categories a:before {
+					display:none;
 			}
 		}
 		@include pad(20px 0 0 0);
 		.site-info {
-
 					margin-top:20px;
 					background-color:$darkerCarbon;
 					.content-footer{
@@ -879,8 +873,9 @@ article .date-published {
 #social-menu.social-links li a::before {
 	background-color:transparent;
 }
+footer ul li,
+.social-links li {
 
-.social-links li
 		a[href*="dribbble.com"]::before { content: '\f17d'; background-color:rgb(242, 103, 152)}
 
 		a[href*="facebook.com"]::before { content: '\f09a'; background-color:#3C599F;}
@@ -926,37 +921,25 @@ article .date-published {
 		font-weight:normal;
 		border-radius:5px;
 		text-align:center;
-}
-
-
-footer a:before {
-	display:none;
-}
-
-
-
-#menu-social-menu.menu {
-	@extend ul.social-links;
-	display:block;
-	float:right;
-
-
-	li {
-		display:inline;
-		margin-right: 20px;
-
-		&:last-child {
-			margin-right:0;
-		}
-		a {
-			font-size: 0;
-
-		}
-		a:before {
-				display:inline-block!important;
-		}
 	}
 }
+
+footer .menu-social-menu-container ul {
+		float:left;
+		@include media($desktop) {
+				float:right;
+		}
+
+		li {
+		display:inline;
+		margin-left:5px;
+			a {
+				font-size:0;
+			}
+	}
+}
+
+
 
 
 
@@ -1039,31 +1022,27 @@ ul.portfolio {
 			padding:0;
 			position:relative;
 			overflow:hidden;
-
 			div.title-portfolio {
-				transition: all .3s ease;
-				position: absolute;
-				left:0;
-				height:100%;
-				width:100%;
-				background-color:rgba($carbon, .8);
-				padding:60px;
-
-				div.center-content {
-						position:relative;
-
-						h3 {
-							color:$white;
-							position: absolute;
-						top: 50%;
-						transform: translateY(-50%);
+						transition: all .3s ease;
+						position: absolute;
+						left:0;
+						height:100%;
+						width:100%;
+						background-color:rgba($carbon, .8);
+						padding:60px;
+						div.center-content {
+									position:relative;
+									h3 {
+										color:$white;
+										position: absolute;
+								   	top: 50%;
+								  	transform: translateY(-50%);
+									}
 						}
-				}
 			}
 			img {
-				margin-bottom:0;
-				width:100%;
+						margin-bottom:0;
+						width:100%;
 			}
 		}
-
 }

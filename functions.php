@@ -135,7 +135,7 @@ function footer_widget() {
 		'name'          => esc_html__( 'Footer', 'dinamarca' ),
 		'id'            => 'footer-widget-1',
 		'description'   => '',
-		'before_widget' => '<div id="%1$s" class="widget %2$s columns-4">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s block">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h1 class="widget-title ">',
 		'after_title'   => '</h1>',

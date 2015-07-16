@@ -12,9 +12,14 @@
 				</div><!-- #content -->
 
 				<footer id="colophon" class="site-footer" role="contentinfo">
-									<div class="footer-widgets">
-													<?php dynamic_sidebar( 'footer-widget-1' ); ?>
-									</div>
+									<?php $widgets =  wp_get_sidebars_widgets(); ?>
+									<?php $footerWidgets = count($widgets['footer-widget-1']); ?>
+									<?php if ($footerWidgets != 0) { ?>
+										<?php $total = ($footerWidgets %  4 )  ?>
+												  <div class="footer-widgets columns-<?php echo $total; ?>">
+																<?php dynamic_sidebar( 'footer-widget-1' ); ?>
+												  </div>
+									<?php }?>
 
 								  <div class="site-info">
 											<div class="content-footer">

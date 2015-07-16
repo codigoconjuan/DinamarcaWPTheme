@@ -22,9 +22,6 @@ get_header(); ?>
 	</main><!-- #main -->
 </div><!-- #primary -->
 
-
-
-
 <?php // Load Services ?>
 <?php $titan = TitanFramework::getInstance( 'dinamarca' ); ?>
 <?php if ($titan->getOption( 'show_services' )) { ?>

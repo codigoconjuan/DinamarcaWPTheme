@@ -339,12 +339,228 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
+#: inc/titan-options.php:25
+#, php-format
+#@ _s
+msgid "Call To Action Colors"
+msgstr ""
 
+#: inc/titan-options.php:32
+#, php-format
+#@ _s
+msgid "This color changes the background of your call to action"
+msgstr ""
 
+#: inc/titan-options.php:56
+#, php-format
+#@ _s
+msgid "Header Options"
+msgstr ""
 
+#: inc/titan-options.php:63
+#, php-format
+#@ _s
+msgid "This color changes the background of your header"
+msgstr ""
 
+#: inc/titan-options.php:78
+#, php-format
+#@ _s
+msgid "Navigation Background Color"
+msgstr ""
 
-#: template-parts/content-single.php:49
+#: inc/titan-options.php:81
+#, php-format
+#@ _s
+msgid "This color changes the background of your navigation"
+msgstr ""
+
+#: inc/titan-options.php:90
+#, php-format
+#@ _s
+msgid "Hover and Dropdown Color for Navigation"
+msgstr ""
+
+#: inc/titan-options.php:93
+#, php-format
+#@ _s
+msgid "This color changes the background of your Hover and Dropdown"
+msgstr ""
+
+: inc/titan-options.php:107
+#, php-format
+#@ _s
+msgid "Upload your Logo"
+msgstr ""
+
+: inc/titan-options.php:116
+#, php-format
+#@ _s
+msgid "Header Image"
+msgstr ""
+
+: inc/titan-options.php:119
+#, php-format
+#@ _s
+msgid "Upload an Image"
+msgstr ""
+
+: inc/titan-options.php:134
+#, php-format
+#@ _s
+msgid "Background Options"
+msgstr ""
+
+: inc/titan-options.php:138
+#, php-format
+#@ _s
+msgid "Background Pattern Image"
+msgstr ""
+
+: inc/titan-options.php:152
+#, php-format
+#@ _s
+msgid "Pick a Color"
+msgstr ""
+
+: inc/titan-options.php:166
+#, php-format
+#@ _s
+msgid "Footer and Testimonial (Front) Colors"
+msgstr ""
+
+: inc/titan-options.php:173
+#, php-format
+#@ _s
+msgid "This color changes the background of your footer"
+msgstr ""
+
+: inc/titan-options.php:180
+#, php-format
+#@ _s
+msgid "Text Color"
+msgstr ""
+
+: inc/titan-options.php:183
+#, php-format
+#@ _s
+msgid "This color changes the text color of your call to action"
+msgstr ""
+
+: inc/titan-options.php:196
+#, php-format
+#@ _s
+msgid "Dinamarca Settings"
+msgstr ""
+
+: inc/titan-options.php:201
+#, php-format
+#@ _s
+msgid "Call To Action Options"
+msgstr ""
+
+: inc/titan-options.php:204
+#, php-format
+#@ _s
+msgid "Phone Number"
+msgstr ""
+
+: inc/titan-options.php:207
+#, php-format
+#@ _s
+msgid "Add your Phone number to header."
+msgstr ""
+
+: inc/titan-options.php:210
+#, php-format
+#@ _s
+msgid "Contact Button Text"
+msgstr ""
+
+: inc/titan-options.php:213
+#, php-format
+#@ _s
+msgid "Contact Text"
+msgstr ""
+
+: inc/titan-options.php:216
+#, php-format
+#@ _s
+msgid "Contact Button Link"
+msgstr ""
+
+: inc/titan-options.php:219
+#, php-format
+#@ _s
+msgid "Contact Link."
+msgstr ""
+
+: inc/titan-options.php:227
+#, php-format
+#@ _s
+msgid "Front Page"
+msgstr ""
+
+: inc/titan-options.php:231
+#, php-format
+#@ _s
+msgid "Show Slider"
+msgstr ""
+
+: inc/titan-options.php:239
+#, php-format
+#@ _s
+msgid "Show Services"
+msgstr ""
+: inc/titan-options.php:248
+#, php-format
+#@ _s
+msgid "Show Testimonials"
+msgstr ""
+
+: inc/titan-options.php:255
+#, php-format
+#@ _s
+msgid "Show Blog"
+msgstr ""
+
+: inc/titan-options.php:269
+#, php-format
+#@ _s
+msgid "General"
+msgstr ""
+
+: inc/titan-options.php:273
+#, php-format
+#@ _s
+msgid "Show Author Bio"
+msgstr ""
+
+: inc/titan-options.php:276
+#, php-format
+#@ _s
+msgid "Check to True"
+msgstr ""
+
+: inc/titan-options.php:286
+#, php-format
+#@ _s
+msgid "Footer"
+msgstr ""
+
+: inc/titan-options.php:290
+#, php-format
+#@ _s
+msgid "Copyright Text"
+msgstr ""
+
+: inc/titan-options.php:293
+#, php-format
+#@ _s
+msgid "Enter your copyright text here"
+msgstr ""
+
+#: template-parts/content-single.php:24
 #, php-format
 #@ _s
 msgctxt "post author by"
@@ -358,17 +574,6 @@ msgctxt "author bio"
 msgid "Author Bio"
 msgstr ""
 
-#: inc/titan-options.php:163
-#, php-format
-#@ _s
-msgid "Show Author Bio"
-msgstr ""
-
-#: inc/titan-options.php:166
-#, php-format
-#@ _s
-msgid "Check to True"
-msgstr ""
 
 #: inc/template-tags.php:91
 #, php-format

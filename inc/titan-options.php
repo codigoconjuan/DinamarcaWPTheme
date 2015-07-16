@@ -74,6 +74,34 @@ function dinamarca_create_options() {
 								}',
 	) );
 
+	$section->createOption( array(
+	    'name' => __( 'Navigation Background Color', 'dinamarca' ),
+	    'id' => 'nav_color',
+	    'type' => 'color',
+	    'desc' => __( 'This color changes the background of your navigation', 'dinamarca' ),
+	    'default' => '#242A30',
+			'livepreview' => '',
+	  	'css' => 'header.site-header  .main-navigation{
+	  	                        background-color: value!important;
+						    }',
+	) );
+
+	$section->createOption( array(
+	    'name' => __( 'Hover and Dropdown Color for Navigation', 'dinamarca' ),
+	    'id' => 'hover_bg',
+	    'type' => 'color',
+	    'desc' => __( 'This color changes the background of your Hover and Dropdown', 'dinamarca' ),
+	    'default' => '#242A30',
+			'livepreview' => '',
+	  	'css' => '.main-navigation ul.menu li:hover,
+								.main-navigation div.menu li:hover,
+								.main-navigation ul.menu li > ul,
+								.main-navigation div.menu li > ul {
+										background: value!important;
+								}
+
+								',
+	) );
 
 	$section->createOption( array(
 	    'name' => 'Upload your Logo',
@@ -95,6 +123,39 @@ function dinamarca_create_options() {
 									background-image: value!important
 							}',
 	) );
+
+
+	/**
+	 * Create a Theme Customizer panel where we can edit some options.
+	 * You should put options here that change the look of your theme.
+	 */
+
+	$section = $titan->createThemeCustomizerSection( array(
+	    'name' => __( 'Background Options', 'dinamarca' ),
+	) );
+
+	$section->createOption( array(
+	    'name' => 'Background Pattern Image',
+	    'id' => 'bg_pattern',
+	    'type' => 'upload',
+	    'desc' => 'Upload an Image',
+			'default' => '',
+			'livepreview' => '',
+			'css' => '.site-content  {
+									background-image: value!important
+							}',
+	) );
+	$section->createOption( array(
+	    'name' => 'Background Color',
+	    'id' => 'bg_color',
+	    'type' => 'color',
+	    'desc' => 'Pick a Color',
+			'default' => '',
+			'livepreview' => '',
+			'css' => '.site-content  {
+									background: value!important
+							}',
+	) );
 	/**
 	 * Create an admin panel & tabs
 	 * You should put options here that do not change the look of your theme
@@ -102,7 +163,7 @@ function dinamarca_create_options() {
 
 
 	$footer = $titan->createThemeCustomizerSection( array(
-			'name' => __( 'Footer Options', 'dinamarca' ),
+			'name' => __( 'Footer and Testimonial (Front) Colors' , 'dinamarca' ),
 	) );
 
 	$footer->createOption( array(
@@ -111,7 +172,7 @@ function dinamarca_create_options() {
 			'type' => 'color',
 			'desc' => __( 'This color changes the background of your footer', 'dinamarca' ),
 			'default' => '#363f48',
-			'css' => 	'footer.site-footer {
+			'css' => 	'footer.site-footer, .testimonials-section {
 								    background-color:value!important;
 						     }',
 	) );
@@ -122,7 +183,11 @@ function dinamarca_create_options() {
 	    'desc' => __( 'This color changes the text color of your call to action', 'dinamarca' ),
 	    'default' => '#FFFFFF',
 			'livepreview' => '',
-		  'css' => 'footer.site-footer p {
+		  'css' => '.testimonials-section h2.title,
+								.testimonials-section p,
+								.testimonials-section h3,
+								footer.site-footer .textwidget,
+								footer.site-footer a {
 				  					color:value!important;
 								}',
 	) );
@@ -225,7 +290,7 @@ function dinamarca_create_options() {
 		'name' => __( 'Copyright Text', 'dinamarca' ),
 		'id' => 'copyright',
 		'type' => 'text',
-		'desc' => __( 'Enter your copyright text here (sample only)', 'dinamarca' ),
+		'desc' => __( 'Enter your copyright text here', 'dinamarca' ),
 	) );
 
 	$footerTab->createOption( array(
