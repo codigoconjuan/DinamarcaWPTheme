@@ -4,16 +4,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2015-07-16 16:17-0500\n"
+"POT-Creation-Date: 2015-07-16 16:57-0500\n"
+"PO-Revision-Date: 2015-07-16 16:57-0500\n"
+"Last-Translator: Juan Pablo De la torre\n"
+"Language-Team: \n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-07-16 16:36-0500\n"
-"Last-Translator: Juan Pablo De la torre\n"
-"Language-Team: \n"
 "X-Generator: Poedit 1.8.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: es_ES\n"
 
 # @ _s
 #: 404.php:15
@@ -540,6 +540,11 @@ msgid "Enter your copyright text here"
 msgstr "Coloca tu Texto para Derechos de Autor Aquí"
 
 # @ _s
+#, php-format
+msgid "Testimonials"
+msgstr "Testimoniales"
+
+# @ _s
 #: template-parts/content-single.php:24
 #, php-format
 msgctxt "post author by"
@@ -559,3 +564,17 @@ msgstr "Biografía del Autor"
 msgctxt "post author"
 msgid "by %s"
 msgstr "por %s"
+
+# @ _s
+#: template-parts/content-single.php:65
+#, php-format
+msgctxt "Post Type General Name"
+msgid "Testimonials"
+msgstr "Testimoniales"
+
+# @ _s
+#: template-parts/content-single.php:65
+#, php-format
+msgctxt "Post Type Singular Name"
+msgid "Testimonials"
+msgstr "Testimoniales"

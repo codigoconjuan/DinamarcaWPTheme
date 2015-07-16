@@ -560,6 +560,13 @@ msgstr ""
 msgid "Enter your copyright text here"
 msgstr ""
 
+: inc/titan-options.php:286
+#, php-format
+#@ _s
+msgid "Testimonials"
+msgstr ""
+
+
 #: template-parts/content-single.php:24
 #, php-format
 #@ _s
@@ -580,4 +587,19 @@ msgstr ""
 #@ _s
 msgctxt "post author"
 msgid "by %s"
+msgstr ""
+
+#: template-parts/content-single.php:65
+#, php-format
+#@ _s
+msgctxt "Post Type General Name"
+msgid "Testimonials"
+msgstr ""
+
+
+#: template-parts/content-single.php:65
+#, php-format
+#@ _s
+msgctxt "Post Type Singular Name"
+msgid "Testimonials"
 msgstr ""
